@@ -14,6 +14,8 @@ module.exports = {
       black: "#000",
       transp: "#ffffff00",
       richBlack: "#161D29",
+      midBlack: "#161D29",
+      softBlack: "#2C333F",
       richBlue: "#4c50d3",
       softBlue: "#c3e1ff"
     },

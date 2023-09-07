@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import tokenSlice from './slices/auth'
+import loaderSlice from './slices/Loader'
 import profileSlice from './slices/profile'
+import tokenSlice from './slices/Token'
 
 export const store = configureStore({
   reducer: {
-    token: tokenSlice,
-    profile: profileSlice
+    loader: loaderSlice,
+    profile: profileSlice,
+    token: tokenSlice
   },
 })
