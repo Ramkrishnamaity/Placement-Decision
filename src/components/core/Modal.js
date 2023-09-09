@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '../Button'
 
-const Modal = ({desc, btnText, setOpenModal, deleteAccount, logout }) => {
+const Modal = ({desc, btnText, setOpenModal, deleteAccount, logout, deleteJob }) => {
 
 
   return (
@@ -15,6 +15,9 @@ const Modal = ({desc, btnText, setOpenModal, deleteAccount, logout }) => {
                 }
                 if(logout!== null){
                   logout()
+                }
+                if(deleteJob!== null){
+                  deleteJob()
                 }
                 setOpenModal(false)
             }}>

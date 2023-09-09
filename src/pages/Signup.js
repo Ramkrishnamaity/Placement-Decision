@@ -8,7 +8,7 @@ import { useDispatch , useSelector } from 'react-redux';
 import {setSignupData} from '../redux/slices/Token'
 import Spinner from '../components/Spinner'
 import { setLoader } from '../redux/slices/Loader';
-import { toast } from 'react-hot-toast';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
 
@@ -45,6 +45,7 @@ const Signup = () => {
                 // toast
                 toast.success(data.message)
             } else{
+                dispatch(setLoader(false))
                 // error toast message
                 toast.error(data.message)
             }

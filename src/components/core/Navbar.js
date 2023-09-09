@@ -11,6 +11,7 @@ import {FiSettings} from 'react-icons/fi'
 import { setToken } from '../../redux/slices/Token'
 import { setUser } from '../../redux/slices/profile'
 import Modal from './Modal'
+import { toast } from 'react-toastify'
 
 const Navbar = () => {
 
@@ -27,6 +28,7 @@ const Navbar = () => {
       localStorage.removeItem('user')
       dispatch(setToken(null))
       dispatch(setUser(null))
+      toast.success("Logged out successfully")
       // toast
       navigate('/')
     } catch(error){
@@ -46,17 +48,18 @@ const Navbar = () => {
         </Link>
       </div>
 
-
       {/* navbar open button */}
       <div className='cursor-pointer text-white'>
         <div onClick={()=>{setOpen(true)}}><LiaBarsSolid/></div>
       </div>
 
+
+
       {/* Navbar sidebar */}
       {
         open && (
           <div className='fixed top-[4rem]'>
-            <div className='fixed pb-5 flex flex-col items-start justify-around pl-3 w-[75%] sm:w-[50%] md:w-[35%] lg:w-[30%]  h-full  bg-richBlue left-0 transition-all duration-100  origin-left  ease-linear'>
+            <div className='fixed pb-5 flex flex-col items-start justify-around pl-3 w-[75%] sm:w-[50%] md:w-[35%] lg:w-[30%]  h-full  bg-richBlack text-white   left-0 transition-all duration-100  origin-left  ease-linear'>
               {/* navbar close button */}
               <div className='absolute top-5 right-5 cursor-pointer'>
                 <div className=' cursor-pointer' onClick={()=>{setOpen(false)}}><RxCrossCircled /></div>
@@ -67,13 +70,13 @@ const Navbar = () => {
                 !user? 
                   ( 
                     <Link className='w-full' to='/login'>
-                      <div className='bg-white w-[50%] p-3 rounded-lg mx-auto flex items-center justify-center gap-1'>
+                      <div className='bg-white text-softBlack w-[50%] p-3 rounded-lg mx-auto flex items-center justify-center gap-1'>
                         Getting Started<AiOutlineArrowRight/>
                       </div>
                     </Link>
                   ): 
                   (
-                    <div className='bg-white border-2 rounded-md gap-1 p-2 mt-2 text-sm'>
+                    <div className='bg-white text-softBlack border-2 rounded-md gap-1 p-2 mt-2 text-sm'>
                       <div className='flex items-center gap-2'>
                         <img src={user.image} alt={`${user.firstName} profile`} className='sm:w-[50px] sm:h-[50px] w-[35px] h-[35px] rounded-full object-cover'/>
                         <p>{`${user.firstName} ${user.lastName}`}</p>
@@ -186,9 +189,10 @@ const Navbar = () => {
               </div>
 
             </div>
+            
             <div 
             onClick={()=>{setOpen(false)}}
-            className='fixed cursor-pointer bg-transp h-[100vh] w-[25%] sm:w-[50%] md:w-[65%] lg:w-[70%] right-0'
+            className='fixed cursor-pointer h-[100vh] w-[25%] sm:w-[50%] md:w-[65%] lg:w-[70%] right-0 bg-white bg-opacity-10 backdrop-blur-sm'
             >
 
             </div>
@@ -197,7 +201,7 @@ const Navbar = () => {
       }
 
       {/* modal */}
-      {openModal && <Modal desc='You will logged out of your account' btnText='Logout' setOpenModal={setOpenModal} deleteAccount={null} logout={logout} /> }
+      {openModal && <Modal desc='You will logged out of your account' btnText='Logout' setOpenModal={setOpenModal} deleteAccount={null} logout={logout} deleteJob={null} /> }
 
 
     </div>

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { setSignupData } from '../redux/slices/Token'
 import Spinner from '../components/Spinner'
 import { setLoader } from '../redux/slices/Loader'
-import { toast } from 'react-hot-toast'
+import { toast } from 'react-toastify'
 
 const VerifyEmail = () => {
 

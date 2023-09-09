@@ -6,7 +6,7 @@ import { setLoader } from '../redux/slices/Loader'
 import { categories } from '../Data'
 import { endpoints } from '../services/apis'
 import { apiConnector } from '../services/apiConnector'
-import { toast } from 'react-hot-toast'
+import { toast } from 'react-toastify'
 import Job from '../components/Job'
 
 const AllJobs = () => {

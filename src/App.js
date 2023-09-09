@@ -16,7 +16,7 @@ import NotFound from "./pages/NotFound";
 import VerifyEmail from "./pages/VerifyEmail";
 import ResetPassword from "./pages/ResetPassword";
 import CTC from "./pages/CTC"
-import { toast } from "react-hot-toast"
+import { toast } from "react-toastify"
 import Profile from './pages/Profile'
 import AllJobs from './pages/AllJobs'
 import Setting from './pages/Setting'
@@ -24,7 +24,7 @@ import AppliedJobs from './pages/AppliedJobs'
 import ApplyJob from './pages/ApplyJob'
 import CreateJob from './pages/CreateJob'
 import AllStudents from './pages/AllStudents'
-import Job from "./pages/Job";
+import JobPage from "./pages/JobPage";
 
 
 function App() {
@@ -67,7 +67,7 @@ function App() {
 
 
   return (
-  <div className="font-inter bg-softBlue min-h-screen">
+  <div className="font-inter bg-richBlack   min-h-screen">
 
     {/* navigation bar */}
   <Navbar />
@@ -101,7 +101,7 @@ function App() {
           <Route path="/profile" element={<Profile/>} />
           <Route path="/all-job" element={<AllJobs/>} />
           <Route path="/settings" element={<Setting/>} />
-          <Route path="/job/:id" element={<Job/>} />
+          <Route path="/job/:id" element={<JobPage/>} />
 
 
           {

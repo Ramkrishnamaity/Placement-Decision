@@ -10,7 +10,7 @@ import { apiConnector } from "../services/apiConnector";
 import { setToken } from '../redux/slices/Token';
 import { useDispatch } from 'react-redux';
 import { setLoader } from '../redux/slices/Loader';
-import { toast } from 'react-hot-toast';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {

@@ -58,7 +58,7 @@ const Profile = () => {
           <p
             className=''
           >
-            {user?.additionalDetails?.about? user?.additionalDetails?.about : "Write Something About Yourself"}
+            {user?.profile?.about? user?.profile?.about : "Write Something About Yourself"}
           </p>
         </div>
 
@@ -90,7 +90,13 @@ const Profile = () => {
             <div>
               <p className="mb-2 text-sm text-softBlack">Gender</p>
               <p className="text-sm font-medium">
-                {user?.additionalDetails?.gender ?? "Add Gender"}
+                {user?.profile?.gender ?? "Add Gender"}
+              </p>
+            </div>
+            <div>
+              <p className="mb-2 text-sm text-softBlack">City</p>
+              <p className="text-sm font-medium">
+                {user?.profile?.city ?? "Add city"}
               </p>
             </div>
           </div>
@@ -104,13 +110,19 @@ const Profile = () => {
             <div>
               <p className="mb-2 text-sm text-softBlack">Phone Number</p>
               <p className="text-sm font-medium">
-                {user?.additionalDetails?.contactNumber ?? "Add Contact Number"}
+                {user?.profile?.contactNumber ?? "Add Contact Number"}
               </p>
             </div>
             <div>
               <p className="mb-2 text-sm text-softBlack">Date Of Birth</p>
               <p className="text-sm font-medium text-richblack-5">
                 { dateofbirth !== null? date : "Add Date Of Birth"}
+              </p>
+            </div>
+            <div>
+              <p className="mb-2 text-sm text-softBlack">State</p>
+              <p className="text-sm font-medium">
+                {user?.profile?.state ?? "Add city"}
               </p>
             </div>
           </div>

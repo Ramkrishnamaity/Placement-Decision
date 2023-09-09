@@ -7,7 +7,7 @@ import { apiConnector } from '../services/apiConnector'
 import { useSelector, useDispatch } from 'react-redux'
 import Spinner from '../components/Spinner'
 import { setLoader } from '../redux/slices/Loader'
-import { toast } from 'react-hot-toast'
+import { toast } from 'react-toastify'
 
 const ForgotPassword = () => {
 

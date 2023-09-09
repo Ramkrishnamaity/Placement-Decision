@@ -7,7 +7,7 @@ import { apiConnector } from '../services/apiConnector'
 import { endpoints } from '../services/apis'
 import Spinner from '../components/Spinner'
 import { setLoader } from '../redux/slices/Loader';
-import { toast } from 'react-hot-toast';
+import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux'
 
 const ResetPassword = () => {

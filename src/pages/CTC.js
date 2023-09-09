@@ -4,7 +4,7 @@ import Button from '../components/Button'
 import Spinner from '../components/Spinner'
 import { useSelector, useDispatch } from 'react-redux'
 import { setLoader } from '../redux/slices/Loader'
-import { toast } from 'react-hot-toast'
+import { toast } from 'react-toastify'
 
 const CTC = () => {
 

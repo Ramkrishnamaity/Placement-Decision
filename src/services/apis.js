@@ -12,4 +12,10 @@ export const endpoints = {
     GET_JOBS: BASE_URL + '/job/getJobs',
     UPLOAD_PROFILE_PICTURE: BASE_URL + '/profile/updateProfilePicture',
     DELETE_ACCOUNT : BASE_URL + '/profile/deleteProfile',
+    CTC_MAILS : BASE_URL + '/students/getAllStudents',
+    ALL_PROFILE : BASE_URL + '/profile/getUsers',
+    JOB : BASE_URL + '/job/getJob',
+    UPDATE_PROFILE : BASE_URL + '/profile/updateProfile',
+    CREATE_JOB : BASE_URL + '/job/createJob',
+    DELETE_JOB : BASE_URL + '/job/deleteJob'
 }

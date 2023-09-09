@@ -6,6 +6,7 @@ import { setLoader } from '../../redux/slices/Loader'
 import { useDispatch, useSelector } from 'react-redux'
 import { apiConnector } from '../../services/apiConnector'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const DeleteProfile = () => {
 
@@ -19,12 +20,18 @@ const DeleteProfile = () => {
         try{
             dispatch(setLoader(true))
             //api call
-            await apiConnector("DELETE", DELETE_ACCOUNT, null, {Authorization: `Bearer ${token}`})
+            const {data} = await apiConnector("DELETE", DELETE_ACCOUNT, null, {Authorization: `Bearer ${token}`})
             //navigate
-            localStorage.removeItem('user')
-            localStorage.removeItem('token')
-            dispatch(setLoader(false))
-            navigate('/')
+            if(data.success){
+                localStorage.removeItem('user')
+                localStorage.removeItem('token')
+                dispatch(setLoader(false))
+                navigate('/')
+            } else{
+                // error toast
+                toast.error(data.message)
+                dispatch(setLoader(false))
+            }
             
         } catch(error){
             dispatch(setLoader(false))
@@ -60,7 +67,7 @@ const DeleteProfile = () => {
         </div>
 
         {/* modal */}
-        {openModal && <Modal desc='You want to delete your account' btnText='Delete' setOpenModal={setOpenModal} deleteAccount={deleteAccount} logout={null} /> }
+        {openModal && <Modal desc='You want to delete your account' btnText='Delete' setOpenModal={setOpenModal} deleteAccount={deleteAccount} logout={null} deleteJob={null} /> }
 
         </div>
     </div>

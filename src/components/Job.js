@@ -22,7 +22,7 @@ const Job = ({job}) => {
 
 
   return (
-    <div className=' rounded-lg bg-white w-full flex gap-5 justify-start items-center p-10'
+    <div className=' rounded-lg bg-white w-full flex gap-5 flex-wrap justify-start items-center p-10'
     onClick={(e)=>{navigate(`/job/${job._id}`)}}
     >
         <div className='self-start'>
