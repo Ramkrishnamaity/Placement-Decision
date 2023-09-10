@@ -8,6 +8,7 @@ import { apiConnector } from '../services/apiConnector'
 import { toast } from 'react-toastify'
 import Job from '../components/Job'
 import Modal from '../components/core/Modal'
+import { CSVLink } from 'react-csv'
 
 const JobPage = () => {
 
@@ -61,6 +62,37 @@ const JobPage = () => {
       toast.error("Network issue")
     }
   }
+
+  function isApply(){
+    if(Object.values(user?.jobs).find((v)=> v._id === job?._id))
+      return true
+    else return false
+  }
+
+  function isSame(jId){
+    if(job?._id === jId) return true
+    else return false
+  }
+
+  function getData(){
+
+    let data = job?.applications
+
+    Object.values(data).forEach((app)=>{
+      delete app._id
+      delete app.jobId 
+      delete app.uid 
+      delete app.createdAt 
+      delete app.updatedAt 
+      delete app.__v 
+    })
+
+    return data
+
+  }
+
+
+
 
 
   useEffect(()=>{
@@ -137,14 +169,21 @@ const JobPage = () => {
                     </button>
                     {
                       user?.accountType === 'Student'? (
+                       isApply()? (
+                        <button disabled className='p-1 bg-richBlue rounded-lg'>
+                          Applied           
+                        </button>
+                       ):(
                         <button onClick={()=>{navigate(`/apply-job/${job?._id}`)}} className='p-1 bg-richBlue rounded-lg'>
                           ApplyJob           
                         </button>
+                       ) 
                       ) : (
                         <>
-                        <button onClick={()=>{console.log("Downloaded applications")}} className='p-1 bg-richBlue rounded-lg'>
-                          Download Applications
-                        </button>
+                        <div className='p-1 bg-richBlue rounded-lg'>
+                          <CSVLink data={getData()}>Download Applications</CSVLink>
+                        </div>
+                        
                         <button onClick={()=>{setOpenModal(true)}} className='p-1 bg-[red] rounded-lg'>
                           Delete Job
                         </button>
@@ -166,7 +205,7 @@ const JobPage = () => {
               <>
                 {
                   relatedJob.map((j)=>(
-                    <Job job={j} key={j._id}/>
+                    !isSame(j._id) && <Job job={j} key={j._id}/> 
                   ))
                 }
               </>

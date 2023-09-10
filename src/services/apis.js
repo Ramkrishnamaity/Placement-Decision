@@ -17,5 +17,9 @@ export const endpoints = {
     JOB : BASE_URL + '/job/getJob',
     UPDATE_PROFILE : BASE_URL + '/profile/updateProfile',
     CREATE_JOB : BASE_URL + '/job/createJob',
-    DELETE_JOB : BASE_URL + '/job/deleteJob'
+    DELETE_JOB : BASE_URL + '/job/deleteJob',
+    APPLY_JOB: BASE_URL + '/application/createApplication',
+    INITIATE_ORDER : BASE_URL + '/payment/createOrder',
+    VERIFY_PAYMENT : BASE_URL + '/payment/verifyPayment',
+    PAYMENT_SUCCESS_EMAIL : BASE_URL + '/payment/sendEmail',
 }

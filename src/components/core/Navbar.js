@@ -29,6 +29,7 @@ const Navbar = () => {
       dispatch(setToken(null))
       dispatch(setUser(null))
       toast.success("Logged out successfully")
+      setOpen(false)
       // toast
       navigate('/')
     } catch(error){
@@ -41,18 +42,18 @@ const Navbar = () => {
   return (
     <div className='z-[100] fixed w-full border bg-richBlack  h-[4rem] flex justify-around items-center text-md tracking-wider'>
 
-      {/* logo */}
-      <div>
-        <Link to='/'>
-          <img src={companyLogo} alt='logo' className='w-[200px] h-[60px] rounded-xl'/>
-        </Link>
-      </div>
 
       {/* navbar open button */}
       <div className='cursor-pointer text-white'>
         <div onClick={()=>{setOpen(true)}}><LiaBarsSolid/></div>
       </div>
 
+      {/* logo */}
+      <div>
+        <Link to='/'>
+          <img src={companyLogo} alt='logo' className='w-[200px] h-[60px] rounded-xl'/>
+        </Link>
+      </div>
 
 
       {/* Navbar sidebar */}

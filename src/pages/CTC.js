@@ -1,19 +1,20 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
 import Spinner from '../components/Spinner'
 import { useSelector, useDispatch } from 'react-redux'
+import { payment } from '../services/Payment'
 import { setLoader } from '../redux/slices/Loader'
-import { toast } from 'react-toastify'
 
 const CTC = () => {
 
-    const dispatch = useDispatch()
     
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const loader = useSelector((state)=>state.loader.value)
 
     const [formData, setFormData] = useState({
-        email: '', amount: 1, firstName: '', lastName: ''
+        email: '', amount: 3300, firstName: '', lastName: ''
     })
 
     function handleOnChange(e){
@@ -23,36 +24,13 @@ const CTC = () => {
         }))
     }
 
-    async function submitHandler(e){
-        try{
-            e.preventDefault()
-            dispatch(setLoader(true))
-            // api call
-            
-            setFormData({
-                email: '', amount: 1, firstName: '', lastName: ''
-            })
-            // if(response.data.success){
-                // dispatch(setLoader(false))
-                // navigate('/signup')
-
-                // toast success
-            // } else{
-            //     dispatch(setLoader(false))
-            //     // error toast message
-            //     toast.error(data.message)
-            // }
-            
-
-        } catch(error){
-            setFormData({
-                email: '', amount: 1, firstName: '', lastName: ''
-            })
-            dispatch(setLoader(false))
-            // toast
-            toast.error("Network Issue")
-            console.log(error.message)
-        }
+    function submitHandler(e){
+        e.preventDefault()  
+        dispatch(setLoader(true))
+        payment(formData, dispatch, navigate)
+        setFormData({
+            email: '', amount: 3300, firstName: '', lastName: ''
+        })
     }
 
 
@@ -126,7 +104,7 @@ const CTC = () => {
                     </div>
 
                     <div>
-                        <Button text='Sign Up' type='submit'></Button>
+                        <Button text='Register' type='submit'></Button>
                     </div>
 
                     <div>

@@ -44,7 +44,7 @@ const Job = ({job}) => {
             <div className='flex items-center flex-wrap'>
                 <div className='flex items-center'>
                     <LuTimer/>
-                    <p> {calTimeInterval(job?.updatedAt)}</p>
+                    <p> {calTimeInterval(job?.createdAt)}</p>
                 </div>
                 <div className='flex items-center'>
                     <GiSandsOfTime/>

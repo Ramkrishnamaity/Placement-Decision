@@ -32,8 +32,7 @@ const AllJobs = () => {
 
 
   async function fetchJob(){
-    try{
-      
+    try{ 
       dispatch(setLoader(true))
       // api call
       const {data} = await apiConnector("GET", GET_JOBS, null, {Authorization: `Bearer ${token}`})
@@ -51,6 +50,23 @@ const AllJobs = () => {
   useEffect(()=>{
     fetchJob()
   },[])
+
+  useEffect(()=>{
+    // jobs !== null && category !== 'All' && Object.values(jobs).filter((j)=>(j.category === category))
+    // category !== "All" && console.log('done', category)
+  }, [category])
+
+  useEffect(()=>{
+    
+  }, [sort])
+
+  useEffect(()=>{
+    
+  }, [tag])
+
+  useEffect(()=>{
+
+  }, [jobType])
 
 
   
@@ -79,7 +95,7 @@ const AllJobs = () => {
                 categories.map((categori, index)=>(
                   <div key={index}
                   className={`px-4 py-2 cursor-pointer rounded-full bg-richBlue`}
-                  onClick={(e)=>{setCategory(e.target.value)}}
+                  onClick={()=>{setCategory(categori)}}
                   >{categori}</div>
                 ))
               }

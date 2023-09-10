@@ -70,7 +70,9 @@ return (
                 name='otp'
               />
             </div>
+            <div>
             <Button text='Submit' type='submit'/>
+            </div>
           </form>
       </div>
     )
