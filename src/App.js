@@ -67,7 +67,7 @@ function App() {
 
 
   return (
-  <div className="font-inter bg-richBlack min-h-screen">
+  <div className="font-inter bg-softBlack min-h-screen">
 
     {/* navigation bar */}
   <Navbar />

@@ -5,11 +5,12 @@ const Modal = ({desc, btnText, setOpenModal, deleteAccount, logout, deleteJob })
 
 
   return (
-    <div className='z-[999] fixed overflow-auto top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-white bg-opacity-10 backdrop-blur-sm'>
-        <div className='flex flex-col items-center border p-5 bg-black text-white'>
+    <div className='text-[#FFFFFF99] z-[999] fixed overflow-auto top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-white bg-opacity-10 backdrop-blur-sm'>
+        <div className='flex flex-col items-center gap-1 p-8 rounded-lg bg-richBlack '>
             <h1>Are you sure?</h1>
             <p>{desc}</p>
-            <div onClick={()=>{
+            <div className='my-2'
+             onClick={()=>{
                 if(deleteAccount !== null){
                   deleteAccount()
                 }
@@ -21,7 +22,9 @@ const Modal = ({desc, btnText, setOpenModal, deleteAccount, logout, deleteJob })
                 }
                 setOpenModal(false)
             }}>
-            <Button text={btnText} />
+            <button className='flex gap-2 items-center bg-[crimson] px-4 rounded-md py-2 text-white' >
+              {btnText}
+            </button>
             </div>
             <button onClick={()=>{setOpenModal(false)}}>
                 Cancel

@@ -47,13 +47,15 @@ const AllStudents = () => {
   
   return (
     loader? (<Spinner/>): (
-      <div className='py-[50px] pt-[75px] min-h-screen '>
-        <div className='w-[95%] sm:w-[98%] md:w-[80%] flex flex-col pt-4 text-white mx-auto gap-5'>
-
-          <h1 className=' text-5xl'>Students</h1>
-          <div className='flex flex-col gap-5 justify-between rounded-md border-[1px] border-midBlack bg-softBlack p-8 px-12'>
-            <h2>CTC Registered Emails</h2>
-            <div className='flex flex-wrap gap-2 items-center'>
+      <div className='py-[50px] pt-[75px] min-h-screen text-[#FFFFFF99]'>
+        <div className='flex flex-col pt-4 text-white mx-auto'>
+          <h1
+          className="mb-14 sm:text-3xl text-xl font-medium px-5 py-4 bg-richBlue rounded-e-xl self-start"
+          >Students</h1>
+        <div className='w-[95%] sm:w-[98%] md:w-[80%] mx-auto flex flex-col gap-5 '>
+          <div className='flex flex-col gap-5 justify-between rounded-md  bg-richBlack p-8 px-12'>
+            <h2 className='text-2xl tracking-wide'>CTC Registered Emails</h2>
+            <div className='flex flex-wrap gap-3 items-center text-[#FFFFFF99]'>
               {
                 ctc !==null && (
                   ctc.map((mail)=>(
@@ -66,8 +68,8 @@ const AllStudents = () => {
             </div>
           </div>
         
-          <div className='flex flex-col justify-between gap-5 rounded-md border-[1px] border-midBlack bg-softBlack md:p-8 p-5 md:px-12 px-5'>
-            <h2>Registered Students</h2>
+          <div className='flex flex-col justify-between gap-5 rounded-md bg-richBlack md:p-8 p-5 md:px-12 px-5'>
+            <h2 className='text-2xl tracking-wide'>Registered Students</h2>
         
             <div className='bg-richBlue '>
             <table className='w-full border border-collapse'>
@@ -91,6 +93,7 @@ const AllStudents = () => {
             </table>
             </div>
           </div>
+        </div>
 
         </div>
       </div>

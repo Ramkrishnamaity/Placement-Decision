@@ -9,6 +9,7 @@ import Testimonials from '../components/home/Testimonials'
 import Contact from '../components/home/Contact'
 import Footer from '../components/core/Footer'
 import {AiOutlineArrowUp} from 'react-icons/ai'
+import ResetPassword from './ResetPassword'
 
 const Home = () => {
 
@@ -19,6 +20,7 @@ const Home = () => {
   return (
     loader? (<Spinner/>): (
       <div className='min-h-screen flex flex-col'>
+      
           <div ref={topRef}><HeroSection/></div>
           <About/>
           <Companies/>

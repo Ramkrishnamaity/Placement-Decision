@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import college from '../../assets/bg-clg.jpg'
+import {AiOutlineArrowRight} from 'react-icons/ai'
 
 const HeroSection = () => {
   return (
@@ -19,7 +20,7 @@ const HeroSection = () => {
             <p className='text-[#FFFFFF99] font-bold lg:text-center text-start tracking-normal'>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni dolorum, placeat esse laudantium cum necessitatibus porro obcaecati corporis tenetur praesentium.
             </p>
-            <Link to='/ctc-registration' className='bg-[crimson] p-2 rounded-sm lg:self-center self-start'>Register now</Link>
+            <Link to='/ctc-registration' className='bg-[crimson] p-2 rounded-lg lg:self-center self-start flex items-center gap-1'>Register now <span><AiOutlineArrowRight/></span></Link>
             </div>
           </div>
         </div>

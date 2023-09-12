@@ -49,6 +49,7 @@ const ChangeProfileImage = () => {
       setLoading(false)
 
     } catch(error){
+      setLoading(false)
       console.log(error.message)
       setLoading(false)
     }
@@ -58,17 +59,17 @@ const ChangeProfileImage = () => {
 
 
   return (
-    <div className='border bg-richBlack text-white p-5'>
+    <div className='rounded-md bg-richBlack text-white p-5 flex items-center justify-start gap-4'>
       <div>
         <img
               src={previewImage || user?.image}
               alt={`profile-${user?.firstName}`}
-              className="aspect-square w-[78px] rounded-full object-cover"
+              className="aspect-square w-[78px] md:w-[100px] rounded-full object-cover"
         />
       </div>
 
-      <div>
-        <h2>CHange Profile Picture</h2>
+      <div className='space-y-2'>
+        <h2 className='text-xl tracking-wide font-bold'>Change Profile Picture</h2>
         <div className='flex items-center gap-2'>
           <input
           type='file'
@@ -76,13 +77,13 @@ const ChangeProfileImage = () => {
           className='hidden'
           onChange={handleFileChange}
           />
-          <button className=''
+          <button className='rounded-md px-2 py-1 bg-[#FFFFFF99] cursor-pointer'
           onClick={handleClick}
           disabled={loading}
           >
             Select
           </button>
-          <div className='flex gap-2 items-center'
+          <div className='flex gap-2 items-center bg-[crimson] px-1 rounded-md py-1 text-white cursor-pointer'
           onClick={handleFileUpload}
           >
             {

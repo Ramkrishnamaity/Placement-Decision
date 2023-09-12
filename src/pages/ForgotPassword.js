@@ -36,7 +36,7 @@ const ForgotPassword = () => {
         setEmail('')
       }
 
-      dispatch(setLoader(true))
+      dispatch(setLoader(false))
     } catch(error){
       setEmail('')
       toast.error("Network Issue")
@@ -49,9 +49,9 @@ const ForgotPassword = () => {
 
   return (
     loader? (<Spinner/>): (
-      <div className='flex  min-h-screen justify-center items-center py-[50px] pt-[75px] '>
-        <div className='w-1/2'>
-          <h1>
+      <div className='flex text text-[#FFFFFF99] min-h-screen justify-center items-center py-[50px] pt-[75px] '>
+        <div className='lg:w-1/2 md:w-[80%] w-[95%] mx-auto bg-richBlack rounded-md p-5 space-y-2'>
+          <h1 className='text-3xl text-white tracking-wide font-bold'>
             {!emailSent? 'Reset your password' : 'Check email'}
           </h1>
           <p>
@@ -64,7 +64,7 @@ const ForgotPassword = () => {
           >
             {
               !emailSent && (
-                <div className='flex flex-col'>
+                <div className='flex flex-col mt-3'>
                   <label>
                     Email Address
                     <sup className='text-[#EF476F] text-md'>*</sup>
@@ -76,17 +76,17 @@ const ForgotPassword = () => {
                   value= {email}
                   onChange={(e)=>{setEmail(e.target.value)}}
                   required
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                   />
                 </div>
               )
             }
-            <div className='w-full'>
+            <div className='w-full mt-2 text-center'>
               <Button text={!emailSent? 'Submit': 'Resend Email'} type='submit'></Button>
             </div>
           </form>
           <div>
-            <Link className='flex' to='/login'>
+            <Link className='flex items-center' to='/login'>
               <span><BiLeftArrowAlt/></span>
               Back to login
             </Link>

@@ -36,14 +36,14 @@ const CTC = () => {
 
   return (
     loader? (<Spinner/>): (  
-        <div className='flex justify-center items-center  lg:w-[40%] md:w-[50%] w-[90%] mx-auto py-[50px] pt-[75px] min-h-screen'>
+        <div className='flex justify-center items-center  lg:w-[40%] md:w-[50%] w-[90%] mx-auto py-[50px] pt-[75px] min-h-screen text-[#FFFFFF99]'>
 
             <form 
                 onSubmit={(e)=>{submitHandler(e)}}
                 className='w-full'
             >
-                <fieldset className='border rounded-lg px-5 py-5 pt-2 flex flex-col justify-center gap-5'>
-                    <legend className='ml-2 px-1 py-4'>CTC Registration</legend>
+                <fieldset className='border-2 border-[#FFFFFF99] rounded-lg px-5 py-5 pt-2 flex flex-col justify-center gap-5'>
+                    <legend className='ml-2 px-2 py-4 text-white text-2xl tracking-wide'>CTC Registration</legend>
 
                     <div className='flex gap-1 md:flex-row flex-col'>
                         <div  className='flex flex-col'>
@@ -56,7 +56,7 @@ const CTC = () => {
                             placeholder='Enter first name'
                             value= {formData.firstName}
                             onChange={(e)=>{handleOnChange(e)}}
-                            className='my-2 rounded-md py-2 px-5 outline-none'
+                            className='my-2 rounded-md py-2 px-5 outline-none text-black'
                             />
                         </div>
                         <div  className='flex flex-col'>
@@ -69,7 +69,7 @@ const CTC = () => {
                             placeholder='Enter last name'
                             value= {formData.lastName}
                             onChange={(e)=>{handleOnChange(e)}}
-                            className='my-2 rounded-md py-2 px-5 outline-none'
+                            className='my-2 rounded-md py-2 px-5 outline-none text-midBlack'
                             />
                         </div>
                     </div>
@@ -87,7 +87,7 @@ const CTC = () => {
                         value= {formData.email}
                         onChange={(e)=>{handleOnChange(e)}}
                         required
-                        className='my-2 rounded-md py-2 px-5 outline-none'
+                        className='my-2 rounded-md py-2 px-5 outline-none text-midBlack'
                         />
                     </div>
                     <div  className='flex flex-col'>
@@ -99,7 +99,7 @@ const CTC = () => {
                         readOnly
                         type='number' 
                         value= '3300'
-                        className='my-2 rounded-md py-2 px-5 outline-none cursor-no-drop'
+                        className='my-2 rounded-md py-2 px-5 outline-none cursor-no-drop  text-midBlack'
                         />
                     </div>
 

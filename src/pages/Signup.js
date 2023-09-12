@@ -63,14 +63,14 @@ const Signup = () => {
 
   return (
     loader? (<Spinner/>): (
-        <div className='py-[50px] pt-[75px] flex min-h-screen justify-center items-center  lg:w-[40%] md:w-[50%] w-[90%] mx-auto'>
+        <div className='py-[50px] pt-[75px] flex min-h-screen justify-center items-center  lg:w-[40%] md:w-[50%] w-[90%] mx-auto text-[#FFFFFF99]'>
 
         <form 
             onSubmit={(e)=>{submitHandler(e)}}
             className='w-full'
         >
             <fieldset className='border rounded-lg px-5 py-5 pt-2 flex flex-col justify-center gap-5'>
-                <legend className='ml-2 px-1 py-4'>Create Account</legend>
+                <legend className='ml-2 px-2 py-4  text-white text-2xl tracking-wide'>Create Account</legend>
 
                 <div className='flex gap-1 md:flex-row flex-col'>
                     <div  className='flex flex-col'>
@@ -118,7 +118,7 @@ const Signup = () => {
                     value= {formData.email}
                     onChange={(e)=>{handleOnChange(e)}}
                     required
-                    className='my-2 rounded-md py-2 px-5 outline-none'
+                    className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                     />
                 </div>
 
@@ -134,7 +134,7 @@ const Signup = () => {
                     value= {formData.password}
                     onChange={(e)=>{handleOnChange(e)}}
                     required
-                    className='my-2 rounded-md py-2 px-5 outline-none'
+                    className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                     />
                     <div className='absolute p-1 right-2 top-10 cursor-pointer' onClick={()=>{setShowPassword1((prev)=>(!prev))}}>
                         { 
@@ -150,11 +150,11 @@ const Signup = () => {
                     <input
                     name='confirmPassword'
                     type={showPassword2? 'password': 'text'} 
-                    placeholder='Enter password'
+                    placeholder='Confirm password'
                     value= {formData.confirmPassword}
                     onChange={(e)=>{handleOnChange(e)}}
                     required
-                    className='my-2 rounded-md py-2 px-5 outline-none'
+                    className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                     />
                     <div className='absolute p-1 right-2 top-10 cursor-pointer' onClick={()=>{setShowPassword2((prev)=>(!prev))}}>
                         { 

@@ -18,7 +18,7 @@ const PersonalInfo = () => {
 
   function date(str){
     let date = new Date(str)
-    let res = date.getFullYear() + "-" +((date.getMonth()+1).length != 2 ? "0" + (date.getMonth() + 1) : (date.getMonth()+1)) + "-" + (date.getDate().length != 2 ?"0" + date.getDate() : date.getDate());
+    let res = date.getFullYear() + "-" +((date.getMonth()+1).length !== 2 ? "0" + (date.getMonth() + 1) : (date.getMonth()+1)) + "-" + (date.getDate().length !== 2 ?"0" + date.getDate() : date.getDate());
     return res
   }
 
@@ -40,12 +40,12 @@ const PersonalInfo = () => {
 
   
   return (
-    <div className='border border-white bg-richBlack p-10 flex items-center justify-around'>
+    <div className=' w-full rounded-md bg-richBlack p-10 flex items-center justify-around'>
       
-      <form onSubmit={handleSubmit(updateProfile)}>
-        <div className='flex flex-col justify-center gap-3'>
-        <div className='flex items-center flex-wrap gap-5 justify-around'>
-          <div >
+      <form onSubmit={handleSubmit(updateProfile)} >
+        <div className='flex flex-col gap-3 w-full'>
+        <div className='flex flex-col sm:flex-row gap-3 mx-auto'>
+          <div className=' flex flex-col'>
             <label htmlFor='firstName'>First Name
             <sup className='text-[#EF476F] text-md'>*</sup>
             </label>
@@ -53,7 +53,7 @@ const PersonalInfo = () => {
               type='text'
               name='firstName'
               placeholder='Enter your first name'
-              className='my-2 rounded-md py-2 px-5 outline-none'
+              className='my-2 rounded-md py-2 px-5 outline-none w-full text-richBlack'
               {...register("firstName", {required:true})}
               defaultValue={user?.firstName}
             />
@@ -63,7 +63,7 @@ const PersonalInfo = () => {
               </span>
             )}  
           </div>
-          <div>
+          <div className=' flex flex-col'>
             <label htmlFor='lastName'>Last Name
             <sup className='text-[#EF476F] text-md'>*</sup>
             </label>
@@ -71,48 +71,32 @@ const PersonalInfo = () => {
               type='text'
               name='lastName'
               placeholder='Enter your last name'
-              className='my-2 rounded-md py-2 px-5 outline-none'
+              className='my-2 rounded-md py-2 px-5 outline-none w-full text-richBlack'
               {...register("lastName", {required:true})}
               defaultValue={user?.lastName}
             />
             {errors.lastName && (
-              <span className="-mt-1 text-[12px] text-yellow-100">
+              <span className="-mt-1 text-[12px] text-yellow-100 lg:w-[49%] w-full">
                 Please enter your last name.
               </span>
             )}  
           </div>
         </div>
-        <div className='flex flex-col w-[90%] mx-auto'>
-          <label htmlFor='about'>About
-              <sup className='text-[#EF476F] text-md'>*</sup>
-          </label>
-          <textarea
-            name='about'
-            placeholder='write somthing about you'
-            className='my-2 rounded-md py-2 px-5 outline-none resize-none'
-            {...register("about", {required:true})}
-            defaultValue={user?.profile?.about}
-          />
-          {errors.about && (
-            <span className="-mt-1 text-[12px] text-yellow-100">
-              Please enter about your self.
-            </span>
-          )} 
-        </div>
-        <div className='flex items-center flex-wrap gap-2 justify-between'>
-          <div className=''>
+        
+        <div className='flex flex-col sm:flex-row gap-3 mx-auto'>
+          <div className=' flex flex-col'>
             <label htmlFor='email'>Email
             </label>
             <input
               type='email'
               name='email'
               placeholder='Enter your email'
-              className='my-2 rounded-md py-2 px-5'
+              className='my-2 rounded-md py-2 px-5 w-full outline-none text-richBlack'
               value={user?.email}
               readOnly
             />  
           </div>
-          <div>
+          <div className=' flex flex-col'>
             <label htmlFor='contactNumber'>Contact no
             <sup className='text-[#EF476F] text-md'>*</sup>
             </label>
@@ -120,7 +104,7 @@ const PersonalInfo = () => {
               type='number'
               name='contactNumber'
               placeholder='Enter your contact no'
-              className='my-2 rounded-md py-2 px-5 outline-none'
+              className='my-2 rounded-md py-2 px-5 outline-none text-richBlack w-full'
               {...register("contactNumber", {required:true})}
               defaultValue={user?.profile?.contactNumber}
             />
@@ -131,13 +115,14 @@ const PersonalInfo = () => {
             )}  
           </div>
         </div>
-        <div className='flex items-center flex-wrap gap-5 justify-around'>
-          <div >
+        <div className='flex flex-col sm:flex-row sm:justify-between justify-start gap-5 w-full mx-auto py-5'>
+          <div className=' flex flex-col'>
             <label htmlFor='gender'>Gender
             <sup className='text-[#EF476F] text-md'>*</sup>
             </label>
             <select
               name='gender'
+              className='my-2 rounded-md py-2 px-5 w-full outline-none text-richBlack'
               {...register("gender", {required:true})}
               defaultValue={user?.profile?.gender}
             >
@@ -146,13 +131,14 @@ const PersonalInfo = () => {
               <option value='Transgender'>Transgender</option>
             </select> 
           </div>
-          <div>
+          <div className=' flex  flex-col '>
             <label htmlFor='dateOfBirth'>Date of Birth
             <sup className='text-[#EF476F] text-md'>*</sup>
             </label>
             <input
               type='date'
               name='dateOfBirth'
+              className='my-2 rounded-md py-[4.8px] px-5 outline-none text-richBlack w-full'
               {...register("dateOfBirth", {required:{value:true}})}
               defaultValue={date(user?.profile?.dateOfBirth)}
             />
@@ -163,8 +149,8 @@ const PersonalInfo = () => {
             )}  
           </div>
         </div>
-        <div className='flex items-center flex-wrap gap-5 justify-around'>
-          <div >
+        <div className='flex flex-col sm:flex-row gap-3 mx-auto'>
+          <div className=' flex flex-col'>
             <label htmlFor='city'> City
             <sup className='text-[#EF476F] text-md'>*</sup>
             </label>
@@ -172,7 +158,7 @@ const PersonalInfo = () => {
               type='text'
               name='city'
               placeholder='Enter your city'
-              className='my-2 rounded-md py-2 px-5 outline-none'
+              className='my-2 rounded-md py-2 px-5 outline-none w-full text-richBlack'
               {...register("city", {required:true})}
               defaultValue={user?.profile?.city}
             />
@@ -182,7 +168,7 @@ const PersonalInfo = () => {
               </span>
             )}  
           </div>
-          <div>
+          <div className=' flex flex-col'>
             <label htmlFor='state'>State
             <sup className='text-[#EF476F] text-md'>*</sup>
             </label>
@@ -190,7 +176,7 @@ const PersonalInfo = () => {
               type='text'
               name='state'
               placeholder='Enter your state'
-              className='my-2 rounded-md py-2 px-5 outline-none'
+              className='my-2 rounded-md py-2 px-5 outline-none w-full text-richBlack'
               {...register("state", {required:true})}
               defaultValue={user?.profile?.state}
             />
@@ -202,9 +188,32 @@ const PersonalInfo = () => {
           </div>
         </div>
         </div>
-        <div className='flex items-center justify-end gap-5 text-white'>
-          <button onClick={()=>{if(isDirty) reset()}} >Cancel</button> 
-          <button type='submit' disabled={loading}>{loading? 'Updating...': 'Update'}</button>
+        
+        <div className='flex flex-col gap-3'>
+          <label htmlFor='about'>About
+              <sup className='text-[#EF476F] text-md'>*</sup>
+          </label>
+          <textarea
+            name='about'
+            placeholder='write somthing about you'
+            className='my-2 rounded-md py-2 px-5 outline-none resize-none w-full text-richBlack'
+            {...register("about", {required:true})}
+            defaultValue={user?.profile?.about}
+          />
+          {errors.about && (
+            <span className="-mt-1 text-[12px] text-yellow-100">
+              Please enter about your self.
+            </span>
+          )} 
+        </div>
+
+        <div className='flex items-center justify-end gap-5 text-white mt-5'>
+          <button onClick={()=>{if(isDirty) reset()}} 
+          className='rounded-md px-2 py-1 bg-[#FFFFFF99]'
+          >Cancel</button> 
+          <button type='submit' disabled={loading}
+          className='flex gap-2 items-center bg-[crimson] px-2 rounded-md py-2 text-white'
+          >{loading? 'Updating...': 'Update'}</button>
         </div>
       </form>
 

@@ -11,7 +11,7 @@ import Card from './Card';
 const Testimonials = () => {
   return (
     <div className='py-10 w-full h-max flex md:flex-row flex-col md:justify-center items-center gap-5 md:gap-0 bg-[#f4f4f4]'>
-      <div className='md:w-[45%] w-[95%] mx-auto'>
+      <div className='md:w-[45%] w-[95%] mx-auto ml-5'>
       <h2 className='pb-2 px-5 border-b-2 border-[aqua] text-2xl w-max'>Testimonials</h2>
       <p className='mt-5'>
         Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate

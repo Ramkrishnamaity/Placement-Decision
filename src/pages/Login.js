@@ -64,14 +64,14 @@ const Login = () => {
 
   return (loader? (<Spinner/>): (
 
-        <div className='py-[50px] pt-[75px] flex min-h-screen justify-center items-center  lg:w-[40%] md:w-[50%] w-[90%] mx-auto'>
+        <div className='py-[50px] pt-[75px] flex min-h-screen justify-center items-center  lg:w-[40%] md:w-[50%] w-[90%] mx-auto text-[#FFFFFF99]'>
 
             <form 
                 onSubmit={(e)=>{submitHandler(e)}}
                 className='w-full'
             >
                 <fieldset className='border rounded-lg px-5 py-5 pt-2 flex flex-col justify-center gap-5'>
-                    <legend className='ml-2 px-1 py-4'>Welcome Again</legend>
+                    <legend className='ml-2 px-2 py-4  text-white text-2xl tracking-wide'>Welcome Again</legend>
 
                     <div  className='flex flex-col'>
                         <label>

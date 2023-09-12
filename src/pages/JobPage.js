@@ -102,7 +102,7 @@ const JobPage = () => {
   return (
     loader? (<Spinner/>): (
       <div className='py-[50px] pt-[75px] min-h-screen text-white space-y-10'>
-        <div className='w-[95%] sm:w-[90%] md:w-[80%] bg-softBlack flex flex-col items-center gap-8 pt-4 mx-auto'>
+        <div className='w-[95%] sm:w-[90%] md:w-[80%] bg-richBlack p-10  rounded-md flex flex-col items-center gap-8 mx-auto'>
           {
             job !== null && (
               
@@ -118,15 +118,15 @@ const JobPage = () => {
                   <h1>{job?.companyName}</h1>
                   <p>{job?.category}</p>
                 </div>
-                {/* <div className='w-[50%] h-[1px] bg-white'></div> */}
-                <div className='w-[90%] text-justify leading-7'>
+                
+                <div className='sm:w-[90%] w-full  text-justify leading-7'>
                   <h2 className='px-2 py-1 bg-richBlue text-lg text-black rounded-xl w-max'>Job Description</h2>
-                  <p className='p-5'>{job?.description}</p>
+                  <p className='sm:p-5 p-1 mt-2'>{job?.description}</p>
                 </div>
 
-                <div className='w-[90%] mt-[-2rem] flex md:justify-between items-center flex-wrap space-x-5 space-y-3'>
-                  <div className='flex items-center gap-2 mt-3'>
-                    <p className='px-2 py-1 bg-richBlue text-lg text-black rounded-xl'>Skills: </p>
+                <div className='sm:w-[90%] w-full  flex md:justify-between items-center flex-wrap space-x-5 space-y-3'>
+                  <div className=' flex items-center gap-2 mt-3'>
+                    <p className='sm:ml-5 ml-[5%] px-2 py-1 bg-richBlue text-lg text-black rounded-xl'>Skills: </p>
                       {
                         job?.tags.map((tag, index)=>(
                           <p key={index}
@@ -135,29 +135,29 @@ const JobPage = () => {
                         ))
                       }
                   </div>
-                  <div className='flex items-center gap-2'>
+                  <div className=' flex items-center gap-2'>
                     <p className='px-2 py-1 bg-richBlue text-lg text-black rounded-xl'>Location: </p>
                     {
                       job?.location
                     }
                   </div>
-                  <div className='flex items-center gap-2'>
+                  <div className=' flex items-center gap-2'>
                     <p className='px-2 py-1 bg-richBlue text-lg text-black rounded-xl'>Package: </p>
                     <p>{job?.package}</p>
                   </div>
-                  <div className='flex items-center gap-2'>
+                  <div className=' flex items-center gap-2'>
                     <p className='px-2 py-1 bg-richBlue text-lg text-black rounded-xl'>Job Type: </p>
                     <p>{job?.jobType}</p>
                   </div>
-                  <div className='flex items-center gap-2'>
+                  <div className=' flex items-center gap-2'>
                     <p className='px-2 py-1 bg-richBlue text-lg text-black rounded-xl'>vacancie: </p>
                     <p>{job?.vacancie}</p>
                   </div>
-                  <div className='flex items-center gap-2'>
+                  <div className=' flex items-center gap-2'>
                     <p className='px-2 py-1 bg-richBlue text-lg text-black rounded-xl'>Applications: </p>
                     <p>{job?.applications.length}</p>
                   </div>
-                  <div className='flex items-center gap-2'>
+                  <div className=' flex items-center gap-2'>
                     <p className='px-2 py-1 bg-richBlue text-lg text-black rounded-xl'>Last Date: </p>
                     <p>{job?.lastDate.split('T').at(0)}</p>
                   </div>

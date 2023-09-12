@@ -14,12 +14,12 @@ const Setting = () => {
   return (
     loader? (<Spinner/>): (
       <div className='py-[50px] pt-[75px] min-h-screen '>
-        <div className='w-[95%] sm:w-[90%] md:w-[80%] flex flex-col gap-5 pt-4 mx-auto'>
+        <div className='flex flex-col pt-4'>
 
-          <h1>
+          <h1 className='px-5 py-4 bg-richBlue rounded-e-xl self-start mb-14 sm:text-3xl text-xl text-white'>
             Edit Profile
           </h1>
-
+        <div className='w-[95%] sm:w-[90%] md:w-[80%] mx-auto flex flex-col gap-8 text-[#FFFFFF99]'>
           <ChangeProfileImage/>
 
           <PersonalInfo/>
@@ -27,6 +27,7 @@ const Setting = () => {
           <UpdatePassword/>
 
           <DeleteProfile/>
+        </div>
 
         </div>
       </div>  

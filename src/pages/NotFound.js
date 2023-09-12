@@ -5,7 +5,7 @@ const NotFound = () => {
   
 
   return (
-    <div className=' py-[50px] pt-[75px] min-h-screen '>
+    <div className='py-[50px] pt-[75px] min-h-screen '>
         404 Not Found
     </div>
   )

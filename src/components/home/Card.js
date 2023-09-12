@@ -7,6 +7,7 @@ const Card = ({data}) => {
 
         <div className='flex items-center justify-start gap-2'>
             <img
+            alt='dataimag'
                 src={data.image}
                 className='w-[70px] h-[70px] rounded-full'
             />
@@ -15,7 +16,7 @@ const Card = ({data}) => {
                 <p>{data.designation}</p>
             </div>
         </div>
-        <div className=''>
+        <div className='flex justify-center items-center flex-col gap-2 pb-5'>
         <BiSolidQuoteAltLeft/><p className=''>{data.description}</p><BiSolidQuoteAltRight/>
         </div>
 

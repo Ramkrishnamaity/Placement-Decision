@@ -121,7 +121,7 @@ const AllJobs = () => {
               !jobs? (<div>Job not found</div>):
               (
                 jobs.filter((job)=>job.jobType.includes(jobType)).map((job)=>(
-                  <Job key={job._id} job={job}></Job>
+                  <Job key={job._id} job={job} clickDisable='true'></Job>
                 ))
               )
             }

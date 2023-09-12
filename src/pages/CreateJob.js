@@ -8,6 +8,7 @@ import { apiConnector } from '../services/apiConnector'
 import Spinner from '../components/Spinner'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import Button from '../components/Button'
 
 const CreateJob = () => {
 
@@ -42,12 +43,14 @@ const CreateJob = () => {
 
   return (
     loader? (<Spinner/>): (
-      <div className='py-[50px] pt-[75px] min-h-screen '>
-        <div className='w-[95%] sm:w-[90%] md:w-[80%] bg-softBlack flex flex-col items-center gap-8 pt-4 mx-auto pb-8'>
-          <h1 className='text-richBlue text-2xl self-start ml-5'>Create Job</h1>
-          <form onSubmit={handleSubmit(submitHandler)}>
-            <div className='flex items-center gap-3 md:flex-row flex-col'>
-              <div className='flex flex-col'>
+      <div className='py-[30px] pt-[75px] min-h-screen  text-[#FFFFFF99]'>
+        <div className=' bg-softBlack flex flex-col items-center pt-4 mx-auto pb-1'>
+        <h1 className="text-white mb-14 sm:text-3xl text-xl font-medium px-5 py-4 bg-richBlue rounded-e-xl self-start">
+          Create Job</h1>
+          <div className='w-[95%] sm:w-[85%] md:w-[80%] mx-auto '>
+          <form onSubmit={handleSubmit(submitHandler)} className='w-full'>
+            <div className='flex gap-2 md:flex-row flex-col justify-between items-center'>
+              <div className='flex flex-col md:w-[49%] w-full'>
                 <label htmlFor='companyName'>Company Name
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -55,7 +58,7 @@ const CreateJob = () => {
                   type='text'
                   name='companyName'
                   placeholder='like google'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack w-full'
                   {...register("companyName", {required:true})}
                 />
                 {errors.companyName && (
@@ -64,7 +67,7 @@ const CreateJob = () => {
                 </span>
               )}  
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col md:w-[49%] w-full'>
                 <label htmlFor='companyUrl'>Company URL
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -72,7 +75,7 @@ const CreateJob = () => {
                   type='text'
                   name='companyUrl'
                   placeholder='like google.com'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack w-full'
                   {...register("companyUrl", {required:true})}
                 /> 
                 {errors.companyUrl && (
@@ -82,14 +85,15 @@ const CreateJob = () => {
               )} 
               </div>
             </div>
-            <div className='flex items-center gap-3 md:flex-row flex-col'>
-              <div className='flex flex-col'>
+            
+            <div className='flex items-center justify-between gap-3 md:flex-row flex-col'>
+              <div className='flex flex-col md:w-[32%] w-full'>
                 <label htmlFor='category'>Category
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
                 <select
                   name='category'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-[10px] px-5 outline-none text-richBlack w-full'
                   {...register("category", {required:true})}
                 >
                   {
@@ -100,13 +104,13 @@ const CreateJob = () => {
                 </select>
                 
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col  md:w-[32%] w-full'>
                 <label htmlFor='jobType'>Job Type
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
                 <select
                   name='jobType'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-[10px] px-5 outline-none text-richBlack w-full'
                   {...register("jobType", {required:true})}
                 >
                   <option value="Onsite">Onsite</option>
@@ -115,7 +119,7 @@ const CreateJob = () => {
                 </select>
                 
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col  md:w-[32%] w-full'>
                 <label htmlFor='vacancie'>Vacancie
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -123,7 +127,7 @@ const CreateJob = () => {
                   type='number'
                   name='vacancie'
                   placeholder='enter vacancie'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack w-full'
                   {...register("vacancie", {required:true})}
                 />
                 {errors.vacancie && (
@@ -134,8 +138,8 @@ const CreateJob = () => {
               </div>
             </div>
 
-            <div className='flex items-center gap-3 md:flex-row flex-col'>
-              <div className='flex flex-col'>
+            <div className='flex items-center justify-between gap-2 md:flex-row flex-col'>
+              <div className='flex flex-col md:w-[49%] w-full'>
                 <label htmlFor='tags'>Skills
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -143,7 +147,7 @@ const CreateJob = () => {
                   type='text'
                   name='tags'
                   placeholder='like python R java'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack w-full'
                   {...register("tags", {required:true})}
                 />
                 {errors.tags && (
@@ -152,7 +156,7 @@ const CreateJob = () => {
                 </span>
               )}  
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col md:w-[49%] w-full'>
                 <label htmlFor='location'>Location
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -160,7 +164,7 @@ const CreateJob = () => {
                   type='text'
                   name='location'
                   placeholder='like chennai'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack w-full'
                   {...register("location", {required:true})}
                 /> 
                 {errors.location && (
@@ -171,36 +175,36 @@ const CreateJob = () => {
               </div>
             </div>
 
-            <div className='flex items-center gap-3 md:flex-row flex-col'>
-              <div className='flex flex-col'>
-                <label htmlFor='package'>Skills
+            <div className='flex items-center justify-between gap-2 md:flex-row flex-col'>
+              <div className='flex flex-col md:w-[49%] w-full'>
+                <label htmlFor='package'>Package
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
                 <input
-                  type='number'
+                  type='text'
                   name='package'
                   placeholder='Enter package in Lakh'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack w-full'
                   {...register("package", {required:true})}
                 />
                 {errors.package && (
-                <span className="-mt-1 text-[12px] text-yellow-100">
+                <span className="-mt-1 text-[12px]">
                   Please enter package.
                 </span>
               )}  
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col  md:w-[49%] w-full'>
                 <label htmlFor='lastDate'>Location
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
                 <input
                   type='date'
                   name='lastDate'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none  text-richBlack w-full'
                   {...register("lastDate", {required:true})}
                 /> 
                 {errors.location && (
-                <span className="-mt-1 text-[12px] text-yellow-100">
+                <span className="-mt-1 text-[12px]">
                   Please enter last date.
                 </span>
               )} 
@@ -214,7 +218,7 @@ const CreateJob = () => {
             <textarea
               name='description'
               placeholder='write job D'
-              className='my-2 rounded-md py-2 px-5 outline-none resize-none'
+              className='my-2 rounded-md py-2 px-5 outline-none resize-none w-full h-[80px] text-richBlack'
               {...register("description", {required:true})}
             />
             {errors.description && (
@@ -224,13 +228,12 @@ const CreateJob = () => {
               )}  
             </div>
 
-            <div className='flex justify-center items-center'>
-              <button className='text-[red] text-xl' type='submit'>
-                Create
-              </button>
+            <div className='flex justify-center items-center mt-5'>
+              <Button text='Create' type='submit'/>
             </div>
 
           </form>
+          </div>
         </div>
       </div>
     )

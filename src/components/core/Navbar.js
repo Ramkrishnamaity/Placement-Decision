@@ -4,6 +4,8 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import Button from '../Button'
 import { useDispatch, useSelector } from 'react-redux'
 import {BsList} from 'react-icons/bs'
+import {MdWorkOutline, MdCreateNewFolder} from 'react-icons/md'
+import {PiStudentFill} from 'react-icons/pi'
 import {AiOutlineArrowRight, AiOutlineAppstore, AiOutlineHome} from 'react-icons/ai'
 import {RxCrossCircled} from 'react-icons/rx'
 import {CgProfile} from 'react-icons/cg'
@@ -77,12 +79,18 @@ const Navbar = () => {
                     </Link>
                   ): 
                   (
-                    <div className='bg-white text-softBlack border-2 rounded-md gap-1 p-2 mt-2 text-sm'>
-                      <div className='flex items-center gap-2'>
+                    <div className='bg-richBlue text-white rounded-md gap-2 sm:px-2 py-2 px-1 mt-2 md:ml-5 sm:ml-1 ml-0 flex items-center'>
+                      <div className=''>
                         <img src={user.image} alt={`${user.firstName} profile`} className='sm:w-[50px] sm:h-[50px] w-[35px] h-[35px] rounded-full object-cover'/>
-                        <p>{`${user.firstName} ${user.lastName}`}</p>
                       </div>
-                      <p>{user.email}</p>
+                      <div>
+                      <p
+                      className='sm:text-lg text-md tracking-wider'
+                      >{`${user.firstName} ${user.lastName}`}</p>
+                      <p
+                      className='sm:text-md text-sm tracking-wider text-[#FFFFFF99]'
+                      >{user.accountType}</p>
+                      </div>
                     </div>
                   )
               }
@@ -109,15 +117,15 @@ const Navbar = () => {
                   user && (
                     <>
                       <li>
-                        <NavLink to='/profile' className='flex items-center gap-1'>
+                        <NavLink to='/profile' className='flex items-center gap-2'>
                           <div><CgProfile/></div>
                           <p>My Profile</p>
                         </NavLink>
                       </li>
 
                       <li>
-                        <NavLink to='/all-job' className='flex items-center gap-1'>
-                          <div><AiOutlineAppstore/></div>
+                        <NavLink to='/all-job' className='flex items-center gap-2'>
+                          <div><MdWorkOutline/></div>
                           <p>{user.accountType === "Student"? 'Find Jobs': 'All Jobs'}</p>
                         </NavLink>
                       </li>
@@ -126,7 +134,7 @@ const Navbar = () => {
                         user.accountType === "Student"? 
                         (
                           <li>
-                            <NavLink to='/applied-job' className='flex items-center gap-1'>
+                            <NavLink to='/applied-job' className='flex items-center gap-2'>
                               <div><AiOutlineAppstore/></div>
                               <p>Applied Jobs</p>
                             </NavLink>
@@ -135,14 +143,14 @@ const Navbar = () => {
                         (
                           <>
                             <li>
-                              <NavLink to='/create-job' className='flex items-center gap-1'>
-                                <div><AiOutlineAppstore/></div>
+                              <NavLink to='/create-job' className='flex items-center gap-2'>
+                                <div><MdCreateNewFolder/></div>
                                 <p>Create Job</p>
                               </NavLink>
                             </li>
                             <li>
-                            <NavLink to='/all-students' className='flex items-center gap-1'>
-                              <div><AiOutlineAppstore/></div>
+                            <NavLink to='/all-students' className='flex items-center gap-2'>
+                              <div><PiStudentFill/></div>
                               <p>All Students</p>
                             </NavLink>
                           </li>
@@ -151,7 +159,7 @@ const Navbar = () => {
                       }
 
                       <li>
-                        <NavLink to='/settings' className='flex items-center gap-1'>
+                        <NavLink to='/settings' className='flex items-center gap-2'>
                           <div><FiSettings/></div>
                           <p>Settings</p>
                         </NavLink>

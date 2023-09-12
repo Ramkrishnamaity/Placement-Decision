@@ -51,8 +51,8 @@ const UpdatePassword = () => {
       <form
       onSubmit={(e)=>{submitHandler(e)}} 
       >
-        <fieldset className='border bg-richBlack  p-5 text-white flex md:flex-row flex-col justify-around'>
-          <div className='relative flex flex-col text-black'>
+        <fieldset className=' rounded-md bg-richBlack  p-5  flex md:flex-row flex-col justify-around gap-2'>
+          <div className='relative flex flex-col'>
             <label>
                 Current Password
                 <sup className='text-[#EF476F] text-md'>*</sup>
@@ -64,15 +64,15 @@ const UpdatePassword = () => {
             value= {formData.current}
             onChange={(e)=>{handleOnChange(e)}}
             required
-            className='my-2 rounded-md py-2 px-5 outline-none'
+            className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
             />
-            <div className='absolute p-1 right-2 top-10 cursor-pointer' onClick={()=>{setshowPassword1((prev)=>(!prev))}}>
+            <div className='absolute p-1 right-2 top-10 cursor-pointer text-richBlack' onClick={()=>{setshowPassword1((prev)=>(!prev))}}>
                 { 
                     !showPassword1? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
                 }
             </div>
           </div>
-          <div className='relative flex flex-col text-black'>
+          <div className='relative flex flex-col '>
             <label>
                 New Password
                 <sup className='text-[#EF476F] text-md'>*</sup>
@@ -84,18 +84,22 @@ const UpdatePassword = () => {
             value= {formData.new}
             onChange={(e)=>{handleOnChange(e)}}
             required
-            className='my-2 rounded-md py-2 px-5 outline-none'
+            className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
             />
-            <div className='absolute p-1 right-2 top-10 cursor-pointer' onClick={()=>{setshowPassword2((prev)=>(!prev))}}>
+            <div className='absolute p-1 right-2 top-10 cursor-pointer text-richBlack' onClick={()=>{setshowPassword2((prev)=>(!prev))}}>
                 { 
                     !showPassword2? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
                 }
             </div>
           </div>
         </fieldset>
-        <div className='flex items-center justify-end gap-5'>
-          <button onClick={()=>{setFormData({current: '', new: ''})}}>Cancel</button>
-          <button type='submit' disabled={loading}>{loading? 'Updating...': 'Update'}</button>
+        <div className='flex items-center justify-end gap-5 mt-4'>
+          <button onClick={()=>{setFormData({current: '', new: ''})}}
+          className='rounded-md px-2 py-1 bg-[#FFFFFF99]'
+          >Cancel</button>
+          <button type='submit' disabled={loading}
+           className='flex gap-2 items-center bg-[crimson] px-2 rounded-md py-2 text-white'
+          >{loading? 'Updating...': 'Update'}</button>
         </div>
       </form>
     </div>

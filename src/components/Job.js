@@ -22,26 +22,27 @@ const Job = ({job, clickDisable}) => {
 
 
   return (
-    <div className=' rounded-lg bg-white w-full flex gap-5 flex-wrap justify-start items-center p-10'
+    <div className=' rounded-lg bg-richBlack w-full flex md:space-x-[5rem] lg:space-x-[8rem] space-x-1 gap-y-5 md:flex-row flex-col md:justify-center md:items-center justify-around items-center p-10 text-[#FFFFFF99] '
     onClick={(e)=>{clickDisable && navigate(`/job/${job._id}`)}}
     >
-        <div className='self-start'>
+        <div className=' flex md:flex-row flex-col justify-center md:items-center md:justify-between gap-7'>
+        <div className='md:self-start self-start'>
             <img
                 src={job?.logo}
                 alt='job logo'
-                className='w-[50px] h-[50px] rounded-xl object-cover bg-softBlue'
+                className='w-[78px] h-[78px] rounded-2xl object-cover bg-softBlue'
             />
         </div>
         <div className='space-y-1'>
-            <h2>{job?.companyName}</h2>
-            <div className='flex flex-wrap items-center gap-1'>
-                {job?.tags.map((tag, index)=>(<p key={index}>{tag}</p>))}
+            <h2 className='text-2xl font-bold tracking-wider text-white'>{job?.companyName}</h2>
+            <div className='flex flex-wrap items-center gap-1 text-lg tracking-wide'>
+                {job?.tags.map((tag, index)=>(<p key={index}>{index === job?.tags.length-1?`${tag}` :`${tag},`}</p>))}
             </div>
-            <div className='flex items-center'>
+            <div className='flex items-center  gap-1'>
                 <TfiLocationPin/>
                 <span>{job?.location}</span>
             </div>
-            <div className='flex items-center flex-wrap'>
+            <div className='flex items-center flex-wrap gap-4'>
                 <div className='flex items-center'>
                     <LuTimer/>
                     <p> {calTimeInterval(job?.createdAt)}</p>
@@ -55,10 +56,11 @@ const Job = ({job, clickDisable}) => {
                 </div>
             </div>
         </div>
-        <div className='ml-5 space-y-1 self-start'>
-            <p>Division</p>
-            <p className='text-[green]'>{job?.category}</p>
-            <p className='text-xl text-richBlue'>{`$${job?.package}`}<span className='text-sm text-black pl-1'>/ year</span></p>
+        </div>
+        <div className='flex md:flex-col flex-row gap-5 items-center'>
+            <p className='text-white text-md'>Division</p>
+            <p className=''>{job?.category}</p>
+            <p className='text-xl text-white'>{`${job?.package}`}<span className='text-sm  pl-1'>/ year</span></p>
         </div>
     </div>
   )
