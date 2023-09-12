@@ -67,7 +67,7 @@ function App() {
 
 
   return (
-  <div className="font-inter bg-richBlack   min-h-screen">
+  <div className="font-inter bg-richBlack min-h-screen">
 
     {/* navigation bar */}
   <Navbar />
@@ -132,7 +132,6 @@ function App() {
 
 
   </Routes>
-
 
   </div>
   )

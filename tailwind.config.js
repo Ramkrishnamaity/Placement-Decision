@@ -19,7 +19,9 @@ module.exports = {
       richBlue: "#4c50d3",
       softBlue: "#c3e1ff"
     },
-    extend: {},
+    extend: {
+      
+    },
   },
   plugins: [],
 }

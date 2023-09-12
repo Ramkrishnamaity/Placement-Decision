@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-const Job = ({job}) => {
+const Job = ({job, clickDisable}) => {
 
     const navigate = useNavigate()
 
@@ -23,7 +23,7 @@ const Job = ({job}) => {
 
   return (
     <div className=' rounded-lg bg-white w-full flex gap-5 flex-wrap justify-start items-center p-10'
-    onClick={(e)=>{navigate(`/job/${job._id}`)}}
+    onClick={(e)=>{clickDisable && navigate(`/job/${job._id}`)}}
     >
         <div className='self-start'>
             <img

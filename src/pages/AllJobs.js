@@ -18,26 +18,29 @@ const AllJobs = () => {
   const {user} = useSelector((state)=>state.profile)
   const [tag, setTag] = useState('')
   const [category, setCategory] = useState('All')
-  const [jobType, setJobType] = useState('All')
-  const [sort, setSort] = useState('new')
+  const [jobType, setJobType] = useState('Onsite')
+  const [sort, setSort] = useState(true)
 
-  const [data, setData] = useState(null)
   const [jobs, setJobs] = useState(null)
 
   function enterHandler(e){
     if(e.key === "Enter"){
-      setTag(tag)
+      tag!=='' && fetchJob()
     }
   }
 
 
-  async function fetchJob(){
+  async function fetchJob(category){ 
     try{ 
       dispatch(setLoader(true))
+      let query = ''
       // api call
-      const {data} = await apiConnector("GET", GET_JOBS, null, {Authorization: `Bearer ${token}`})
-      setData(data.jobs)
-      setJobs(data.jobs)
+      if(category) query += `?category=${category}`
+      if(tag !== '' && query !== '') query += `&tags=${tag}`
+      else if(tag !== '') query += `?tags=${tag}`
+
+      const {data} = await apiConnector("GET", `${GET_JOBS}${query}`, null, {Authorization: `Bearer ${token}`})
+      sort? setJobs(data.jobs.reverse()): setJobs(data.jobs)
       dispatch(setLoader(false))
       
     } catch(error){
@@ -50,23 +53,6 @@ const AllJobs = () => {
   useEffect(()=>{
     fetchJob()
   },[])
-
-  useEffect(()=>{
-    // jobs !== null && category !== 'All' && Object.values(jobs).filter((j)=>(j.category === category))
-    // category !== "All" && console.log('done', category)
-  }, [category])
-
-  useEffect(()=>{
-    
-  }, [sort])
-
-  useEffect(()=>{
-    
-  }, [tag])
-
-  useEffect(()=>{
-
-  }, [jobType])
 
 
   
@@ -83,7 +69,7 @@ const AllJobs = () => {
               onKeyUp={(e)=>{enterHandler(e)}}
               className='w-full px-5 py-2 rounded-full outline-none'
             />
-            <button onClick={()=>{setTag(tag)}}
+            <button onClick={()=>{tag!=='' && fetchJob()}}
             className='absolute top-0 right-0 bg-richBlue px-8 py-3 rounded-full'
             ><BiSearch/></button>
           </div>
@@ -94,8 +80,17 @@ const AllJobs = () => {
               {
                 categories.map((categori, index)=>(
                   <div key={index}
-                  className={`px-4 py-2 cursor-pointer rounded-full bg-richBlue`}
-                  onClick={()=>{setCategory(categori)}}
+                  className={`px-4 py-2 cursor-pointer rounded-full ${category === categori? 'bg-richBlue': 'bg-white text-black'}`}
+                  onClick={()=>{
+                    if(categori === 'All'){
+                      setCategory(categori)
+                      fetchJob()
+                    }
+                    else {
+                      setCategory(categori)
+                      fetchJob(categori, null)
+                    }
+                    }}
                   >{categori}</div>
                 ))
               }
@@ -105,16 +100,18 @@ const AllJobs = () => {
               <select className='outline-none px-2 py-1 rounded-full'
               onChange={(e)=>{setJobType(e.target.value)}}
               >
-                <option value='All'>All</option>
                 <option value='Onsite'>Onsite</option>
                 <option value='Remote'>Remote</option>
                 <option value='Hybrid'>Hybrid</option>
               </select>
               <select className='outline-none px-2 py-1 rounded-full'
-              onChange={(e)=>{setSort(e.target.value)}}
+              onChange={(e)=>{
+                setJobs(jobs.reverse())
+                setSort(e.target.value)
+                }}
               >
-                <option value='new'>Recent</option>
-                <option value='old'>Last Recent</option>
+                <option value='true'>Recent</option>
+                <option value='false'>Last Recent</option>
               </select>
             </div>
           </div>
@@ -123,7 +120,7 @@ const AllJobs = () => {
             {
               !jobs? (<div>Job not found</div>):
               (
-                jobs.map((job)=>(
+                jobs.filter((job)=>job.jobType.includes(jobType)).map((job)=>(
                   <Job key={job._id} job={job}></Job>
                 ))
               )

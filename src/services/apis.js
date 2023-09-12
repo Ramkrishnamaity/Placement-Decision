@@ -10,6 +10,7 @@ export const endpoints = {
     CREATE_RESET_TOKEN : BASE_URL + '/auth/createResetToken',
     RESET_PASSWORD : BASE_URL + '/auth/resetPassword',
     GET_JOBS: BASE_URL + '/job/getJobs',
+    GET_LATEST_JOBS : BASE_URL + '/job/getLatestJobs',
     UPLOAD_PROFILE_PICTURE: BASE_URL + '/profile/updateProfilePicture',
     DELETE_ACCOUNT : BASE_URL + '/profile/deleteProfile',
     CTC_MAILS : BASE_URL + '/students/getAllStudents',
@@ -22,4 +23,5 @@ export const endpoints = {
     INITIATE_ORDER : BASE_URL + '/payment/createOrder',
     VERIFY_PAYMENT : BASE_URL + '/payment/verifyPayment',
     PAYMENT_SUCCESS_EMAIL : BASE_URL + '/payment/sendEmail',
+    SEND_EMAIL : BASE_URL + '/students/mail'
 }

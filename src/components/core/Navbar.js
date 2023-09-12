@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import companyLogo from '../../assets/companyLogo.png'
+import companyLogo from '../../assets/com1.png'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import Button from '../Button'
 import { useDispatch, useSelector } from 'react-redux'
-import {LiaBarsSolid} from 'react-icons/lia'
+import {BsList} from 'react-icons/bs'
 import {AiOutlineArrowRight, AiOutlineAppstore, AiOutlineHome} from 'react-icons/ai'
 import {RxCrossCircled} from 'react-icons/rx'
 import {CgProfile} from 'react-icons/cg'
@@ -40,12 +40,12 @@ const Navbar = () => {
 
 
   return (
-    <div className='z-[100] fixed w-full border bg-richBlack  h-[4rem] flex justify-around items-center text-md tracking-wider'>
+    <div className='navbar z-[100] fixed w-full border bg-richBlack  h-[4rem] flex justify-around items-center text-md tracking-wider'>
 
 
       {/* navbar open button */}
       <div className='cursor-pointer text-white'>
-        <div onClick={()=>{setOpen(true)}}><LiaBarsSolid/></div>
+        <div onClick={()=>{setOpen(true)}}><BsList size='30px'/></div>
       </div>
 
       {/* logo */}
@@ -63,7 +63,7 @@ const Navbar = () => {
             <div className='fixed pb-5 flex flex-col items-start justify-around pl-3 w-[75%] sm:w-[50%] md:w-[35%] lg:w-[30%]  h-full  bg-richBlack text-white   left-0 transition-all duration-100  origin-left  ease-linear'>
               {/* navbar close button */}
               <div className='absolute top-5 right-5 cursor-pointer'>
-                <div className=' cursor-pointer' onClick={()=>{setOpen(false)}}><RxCrossCircled /></div>
+                <div className=' cursor-pointer' onClick={()=>{setOpen(false)}}><RxCrossCircled size='20px'/></div>
               </div>
 
               {/* profile */} 
