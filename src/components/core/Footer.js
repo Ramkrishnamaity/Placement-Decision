@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className='pt-10 px-10 w-full h-max flex flex-col justify-center bg-[#f4f4f4]'>
       <div className='flex items-center justify-between'>
-          <div >
+          <div>
             Placement decision Useful Links : 
           </div>
           <div className='flex items-center justify-center gap-2 '>
