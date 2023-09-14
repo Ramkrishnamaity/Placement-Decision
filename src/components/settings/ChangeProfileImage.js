@@ -44,6 +44,7 @@ const ChangeProfileImage = () => {
       formdata.append('profilePicture', image)
       //api call
       const {data} = await apiConnector("PUT", UPLOAD_PROFILE_PICTURE, formdata, {Authorization: `Bearer ${token}`})
+      console.log(data)
       dispatch(setUser(data.user))
       localStorage.setItem('user', JSON.stringify(data.user))
       setLoading(false)
@@ -51,7 +52,6 @@ const ChangeProfileImage = () => {
     } catch(error){
       setLoading(false)
       console.log(error.message)
-      setLoading(false)
     }
   }
 

@@ -85,7 +85,7 @@ const Login = () => {
                         value= {formData.email}
                         onChange={(e)=>{handleOnChange(e)}}
                         required
-                        className='my-2 rounded-md py-2 px-5 outline-none'
+                        className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                         />
                     </div>
 
@@ -101,7 +101,7 @@ const Login = () => {
                         value= {formData.password}
                         onChange={(e)=>{handleOnChange(e)}}
                         required
-                        className='my-2 rounded-md py-2 px-5 outline-none'
+                        className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                         />
                         <div className=' ml-2'>
                             not remember password?
