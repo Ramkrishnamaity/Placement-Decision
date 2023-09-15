@@ -107,16 +107,18 @@ const JobPage = () => {
             job !== null && (
               
               <>
-                <div className='text-center'>
+                <div className='flex flex-col items-center justify-center'>
                   <div>
                     <img
                     src={job?.logo}
                     alt='job logo'
-                    className='w-[100px] h-[100px] rounded-xl object-cover bg-softBlue ml-6'
+                    className='w-[100px] h-[100px] rounded-xl object-cover'
                     />
                   </div>
-                  <h1>{job?.companyName}</h1>
-                  <p>{job?.category}</p>
+                  <div className='text-center mt-1'>
+                    <h1 className='text-xl'>{job?.companyName}</h1>
+                    <p className='text-[#FFFFFF99]'>{job?.category}</p>
+                  </div>
                 </div>
                 
                 <div className='sm:w-[90%] w-full  text-justify leading-7'>
@@ -163,8 +165,8 @@ const JobPage = () => {
                   </div>
                 </div>
 
-                <div className='flex items-center gap-2'>
-                    <button onClick={()=>{navigate('/all-job')}} className='text-[red]'>
+                <div className='flex items-center flex-wrap gap-2'>
+                    <button onClick={()=>{navigate('/all-job')}} className='text-[crimson]'>
                       go back to all jobs
                     </button>
                     {
@@ -184,7 +186,7 @@ const JobPage = () => {
                           <CSVLink data={getData()}>Download Applications</CSVLink>
                         </div>
                         
-                        <button onClick={()=>{setOpenModal(true)}} className='p-1 bg-[red] rounded-lg'>
+                        <button onClick={()=>{setOpenModal(true)}} className='p-1 bg-[crimson] rounded-lg'>
                           Delete Job
                         </button>
                         {/* modal */}
@@ -199,16 +201,16 @@ const JobPage = () => {
           }
         </div>
         <div className='text-black sm:w-[80%] w-[95%] mx-auto space-y-5'>
-          <h2 className='text-white'>Related Jobs</h2>
+          <h2 className='text-white text-2xl tracking-wider'>Related Jobs : </h2>
           {
             relatedJob !== null && (
-              <>
+              <div className='flex flex-wrap gap-5 justify-center items-center'>
                 {
                   relatedJob.map((j)=>(
                     !isSame(j._id) && <Job job={j} key={j._id}/> 
                   ))
                 }
-              </>
+              </div>
             )
           }
         </div>

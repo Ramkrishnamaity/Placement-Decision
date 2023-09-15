@@ -31,10 +31,10 @@ const LatestJob = () => {
       <div className='w-max self-center mb-5'>
         <h2 className='pb-2 px-5 border-b-2 border-[aqua] text-2xl'>Latest jobs</h2>
       </div>
-      <div className='flex flex-col gap-5'>
+      <div className='flex flex-wrap justify-center gap-5 items-center'>
       {jobs !== null && (
         jobs.map((job)=>(
-          <Job key={job._id} job={job} clickDisable={true}></Job>
+          <Job key={job._id} job={job} clickDisable={false}></Job>
         ))
       )}
       </div>

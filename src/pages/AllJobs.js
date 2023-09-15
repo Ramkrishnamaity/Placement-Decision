@@ -70,17 +70,17 @@ const AllJobs = () => {
               className='w-full px-5 py-2 rounded-full outline-none'
             />
             <button onClick={()=>{tag!=='' && fetchJob()}}
-            className='absolute top-0 right-0 bg-richBlue px-8 py-3 rounded-full'
-            ><BiSearch/></button>
+            className='absolute top-0 right-0 bg-[crimson] px-8 py-[10px] rounded-e-2xl rounded-s-sm text-center'
+            ><BiSearch size='20px' color='white'/></button>
           </div>
 
           <div className='flex flex-col gap-2 justify-center'>
-            <h2 className='font-bold'>Recomendation</h2>
+            <h2  className='text-xl text-[crimson] font-bold'>Recomendation</h2>
             <div className='flex items-center gap-2 flex-wrap text-white px-1'>
               {
                 categories.map((categori, index)=>(
                   <div key={index}
-                  className={`px-4 py-2 cursor-pointer rounded-full ${category === categori? 'bg-richBlue': 'bg-white text-black'}`}
+                  className={`px-4 py-2 cursor-pointer rounded-full ${category === categori? 'bg-[crimson]': 'bg-white text-black'}`}
                   onClick={()=>{
                     if(categori === 'All'){
                       setCategory(categori)
@@ -96,7 +96,7 @@ const AllJobs = () => {
               }
             </div>
             <div className='flex items-center gap-3 self-end mt-2'>
-              <p>Sort by</p>
+              <p className='text-xl text-[crimson] font-bold'>Sort by</p>
               <select className='outline-none px-2 py-1 rounded-full'
               onChange={(e)=>{setJobType(e.target.value)}}
               >
@@ -116,12 +116,12 @@ const AllJobs = () => {
             </div>
           </div>
 
-          <div className='flex justify-center items-center flex-col gap-5'>
+          <div className='mt-5 flex justify-between items-center flex-wrap gap-5'>
             {
               !jobs? (<div>Job not found</div>):
               (
                 jobs.filter((job)=>job.jobType.includes(jobType)).map((job)=>(
-                  <Job key={job._id} job={job} clickDisable='true'></Job>
+                  <Job key={job._id} job={job} clickDisable={true}></Job>
                 ))
               )
             }
