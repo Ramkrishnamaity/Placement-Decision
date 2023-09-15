@@ -23,32 +23,47 @@ const Contact = () => {
     ))
   }
 
+  async function validateEmail (email){
+
+    let apikey = process.env.REACT_APP_EMAIL_VALIDATOR_API_KEY
+    let url = `https://api.emailvalidation.io/v1/info?apikey=${apikey}&email=${email}`
+
+    const res = await fetch(url)
+    let data =  await res.json()
+
+    return data.smtp_check
+  }
+
   async function submitHandler(e){
-    e.preventDefault()
-    setFormData({
-      name:'', email: '', subject: '', message: ''
-    })
-    toast.success("Email send successfully")
-
-
-    // try{
-    //   setFlag(true)
-    //   // const {data} = await apiConnector("POST", SEND_EMAIL, formData)
-    //   setFlag(false)
+    try{
+      e.preventDefault()
+      setFlag(true)
+      if(!await validateEmail(formData.email)){
+        setFlag(false)
+        toast.error('Please Enter a Valid Mail')
+        return
+      }
+      const {data} = await apiConnector("POST", SEND_EMAIL, formData)
+      setFormData({
+        name:'', email: '', subject: '', message: ''
+      })
       
-    //   // if(data.success){
-    //   //   setFlag(false)
-    //   //   toast.success(data.message)
-    //   // }
-    //   // else{
-    //   //   setFlag(false)
-    //   //   toast.error(data.message)
-    //   // }
-    // } catch(error){
-    //   toast.error("Network Issue")
-    //   console.log(error.message)
-    //   setFlag(false)
-    // }
+      if(data.success){
+        setFlag(false)
+        toast.success("Email send successfully")
+      }
+      else{
+        setFlag(false)
+        toast.error(data.message)
+      }
+    } catch(error){
+      toast.error("Network Issue")
+      console.log(error.message)
+      setFormData({
+        name:'', email: '', subject: '', message: ''
+      })
+      setFlag(false)
+    }
   }
 
 
@@ -90,7 +105,7 @@ const Contact = () => {
         </div>
         <div className='lg:w-[45%] w-[95%] p-5 rounded-sm bg-[#f4f4f4]'>
           <form className='w-full '
-          onSubmit={submitHandler}
+          onSubmit={(e)=>{submitHandler(e)}}
           >
             <div className='flex flex-col items-center justify-between gap-5'>
               <div className='w-full flex items-center justify-center gap-2 flex-wrap'>
@@ -137,7 +152,11 @@ const Contact = () => {
               <div className='w-max self-center'>
                 <button type='submit' disabled={flag}
                 className='px-3 py-2 rounded-lg bg-[crimson] text-white'
-                >Submit</button>
+                >
+                  {
+                    flag? 'Processing..': 'Submit'
+                  }
+                </button>
               </div>
             </div>
           </form>

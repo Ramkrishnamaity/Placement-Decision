@@ -85,7 +85,7 @@ const Signup = () => {
                         value= {formData.firstName}
                         onChange={(e)=>{handleOnChange(e)}}
                         required
-                        className='my-2 rounded-md py-2 px-5 outline-none'
+                        className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                         />
                     </div>
                     <div  className='flex flex-col'>
@@ -100,7 +100,7 @@ const Signup = () => {
                         value= {formData.lastName}
                         onChange={(e)=>{handleOnChange(e)}}
                         required
-                        className='my-2 rounded-md py-2 px-5 outline-none'
+                        className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                         />
                     </div>
                 </div>

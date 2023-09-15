@@ -1,7 +1,6 @@
 import React from 'react'
 import {TfiLocationPin} from 'react-icons/tfi'
 import {LuTimer} from 'react-icons/lu'
-import {GiSandsOfTime} from 'react-icons/gi'
 import { useNavigate } from 'react-router-dom'
 
 

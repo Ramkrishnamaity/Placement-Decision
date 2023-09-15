@@ -15,7 +15,6 @@ const AllJobs = () => {
   const dispatch = useDispatch()
   const token = useSelector((state)=>state.token.value)
   const loader = useSelector((state)=>state.loader.value)
-  const {user} = useSelector((state)=>state.profile)
   const [tag, setTag] = useState('')
   const [category, setCategory] = useState('All')
   const [jobType, setJobType] = useState('Onsite')
@@ -52,7 +51,7 @@ const AllJobs = () => {
 
   useEffect(()=>{
     fetchJob()
-  },[])
+  })
 
 
   

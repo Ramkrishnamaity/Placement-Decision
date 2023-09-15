@@ -70,7 +70,7 @@ const ApplyJob = () => {
     ){
       navigate('/applied-job')
     }
-  },[])
+  })
 
 
   return (
@@ -88,7 +88,7 @@ const ApplyJob = () => {
                   type='text'
                   name='name'
                   placeholder='Enter name'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                   {...register("name", {required:true})}
                 />
                 {errors.name && (
@@ -105,7 +105,7 @@ const ApplyJob = () => {
                   type='email'
                   name='email'
                   placeholder='enter email'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                   {...register("email", {required:true})}
                 /> 
                 {errors.email && (
@@ -125,7 +125,7 @@ const ApplyJob = () => {
                   type='number'
                   name='rollNo'
                   placeholder='enter roll no'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                   {...register("rollNo", {required:true})}
                 />
                 {errors.rollNo && (
@@ -142,7 +142,7 @@ const ApplyJob = () => {
                   type='number'
                   name='regNo'
                   placeholder='enter reg no'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                   {...register("regNo", {required:true})}
                 /> 
                 {errors.regNo && (
@@ -163,7 +163,7 @@ const ApplyJob = () => {
                   name='semester'
                   max='8'
                   placeholder='Enter your semester'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                   {...register("semester", {required:true})}
                 />
                 {errors.semester && (
@@ -180,7 +180,7 @@ const ApplyJob = () => {
                   type='number'
                   name='year'
                   placeholder='Enter year'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                   {...register("year", {required:true})}
                 /> 
                 {errors.year && (
@@ -199,7 +199,7 @@ const ApplyJob = () => {
                   type='text'
                   name='dept'
                   placeholder='Enter your dept'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                   {...register("dept", {required:true})}
                 />
                 {errors.dept && (
@@ -215,7 +215,7 @@ const ApplyJob = () => {
                 <input
                   type='text'
                   name='cgpa'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                   {...register("cgpa", {required:true})}
                 /> 
                 {errors.cgpa && (
@@ -234,7 +234,7 @@ const ApplyJob = () => {
                   type='text'
                   name='secondary'
                   placeholder='enter percentage'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                   {...register("secondary", {required:true})}
                 />
                 {errors.secondary && (
@@ -250,7 +250,7 @@ const ApplyJob = () => {
                 <input
                   type='text'
                   name='higher'
-                  className='my-2 rounded-md py-2 px-5 outline-none'
+                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                   {...register("higher", {required:true})}
                 /> 
                 {errors.higher && (
@@ -276,7 +276,7 @@ const ApplyJob = () => {
 
             <div className='flex justify-center items-center'>
               <button className='text-[red] text-xl' type='submit'>
-                Create
+                Apply
               </button>
             </div>
 

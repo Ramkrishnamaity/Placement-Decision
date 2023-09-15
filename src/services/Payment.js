@@ -26,7 +26,6 @@ async function verifyPayment(response, email, dispatch, navigate){
         const {data} = await apiConnector("POST", VERIFY_PAYMENT, {...response, email})
         if(!data.success){
             toast.error(data.message)
-            return
         }
     } catch(error){
         dispatch(setLoader(false))
@@ -72,7 +71,7 @@ export async function payment(formData, dispatch, navigate){
 
         // create modal
         const options = {
-            key: process.env.RAZORPAY_KEY,
+            key: process.env.REACT_APP_RAZORPAY_KEY,
             currency: orderResponse.data.data.currency,
             amount: `${orderResponse.data.data.amount}`,
             order_id: orderResponse.data.data.id,
@@ -95,8 +94,8 @@ export async function payment(formData, dispatch, navigate){
           razorpayModal.on("payment.failed", function (response) {
             toast.error("Oops! Payment Failed.")
           })
+          
           dispatch(setLoader(false))
-          navigate('/signup')
 
     } catch(error){
         dispatch(setLoader(false))

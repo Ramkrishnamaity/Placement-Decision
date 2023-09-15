@@ -9,7 +9,6 @@ import Testimonials from '../components/home/Testimonials'
 import Contact from '../components/home/Contact'
 import Footer from '../components/core/Footer'
 import {AiOutlineArrowUp} from 'react-icons/ai'
-import ResetPassword from './ResetPassword'
 
 const Home = () => {
 

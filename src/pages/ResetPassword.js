@@ -96,7 +96,7 @@ const ResetPassword = () => {
                         value= {formData.password}
                         onChange={(e)=>{handleOnChange(e)}}
                         required
-                        className='my-2 rounded-md py-2 px-5 outline-none'
+                        className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                         />
                         <div className='absolute p-1 right-2 top-10 cursor-pointer' onClick={()=>{setShowPassword1((prev)=>(!prev))}}>
                             { 
@@ -116,7 +116,7 @@ const ResetPassword = () => {
                         value= {formData.confirmPassword}
                         onChange={(e)=>{handleOnChange(e)}}
                         required
-                        className='my-2 rounded-md py-2 px-5 outline-none'
+                        className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                         />
                         <div className='absolute p-1 right-2 top-10 cursor-pointer' onClick={()=>{setShowPassword2((prev)=>(!prev))}}>
                             { 

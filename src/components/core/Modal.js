@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../Button'
 
 const Modal = ({desc, btnText, setOpenModal, deleteAccount, logout, deleteJob }) => {
 

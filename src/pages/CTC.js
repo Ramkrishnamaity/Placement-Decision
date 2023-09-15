@@ -5,6 +5,7 @@ import Spinner from '../components/Spinner'
 import { useSelector, useDispatch } from 'react-redux'
 import { payment } from '../services/Payment'
 import { setLoader } from '../redux/slices/Loader'
+import { toast } from 'react-toastify'
 
 const CTC = () => {
 
@@ -24,13 +25,38 @@ const CTC = () => {
         }))
     }
 
-    function submitHandler(e){
-        e.preventDefault()  
-        dispatch(setLoader(true))
-        payment(formData, dispatch, navigate)
-        setFormData({
-            email: '', amount: 3300, firstName: '', lastName: ''
-        })
+    async function validateEmail (email){
+
+        let apikey = process.env.REACT_APP_EMAIL_VALIDATOR_API_KEY
+        let url = `https://api.emailvalidation.io/v1/info?apikey=${apikey}&email=${email}`
+
+        const res = await fetch(url)
+        let data =  await res.json()
+
+        return data.smtp_check
+    }
+
+    async function submitHandler(e){
+        try{
+            e.preventDefault() 
+            dispatch(setLoader(true))
+            if(!await validateEmail(formData.email)){
+                dispatch(setLoader(false))
+                toast.error('Please Enter a Valid Mail')
+                return
+            }
+                
+            await payment(formData, dispatch, navigate)
+            
+            setFormData({
+                email: '', amount: 3300, firstName: '', lastName: ''
+            })
+        } catch(error){
+            console.log(error.message)
+            setFormData({
+                email: '', amount: 3300, firstName: '', lastName: ''
+            })
+        }
     }
 
 

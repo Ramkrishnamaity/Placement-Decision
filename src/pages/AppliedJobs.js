@@ -15,9 +15,11 @@ const AppliedJobs = () => {
           {
             user?.jobs.length === 0? (<div>Job not found</div>):
             (
-              user?.jobs.map((job)=>(
+              <div className='flex flex-wrap gap-5 items-center justify-center'>
+              {user?.jobs.map((job)=>(
                 <Job key={job._id} job={job}></Job>
-              ))
+              ))}
+              </div>
             )
           }
           </div>
