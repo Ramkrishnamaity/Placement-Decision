@@ -70,33 +70,33 @@ const Contact = () => {
   return (
     <div className='py-10 px-10 w-full h-max flex flex-col justify-center bg-white'>
       <div className='w-max self-center mb-4'>
-        <h2 className='pb-2 px-5 border-b-2 border-[aqua] text-2xl'>Contact Us</h2>
+        <h2 className='py-3 px-5 bg-richBlack rounded-full text-white text-2xl'>Contact Us</h2>
       </div>
       <div className='flex flex-col lg:flex-row items-center gap-5'>
         <div className='lg:w-[50%] w-[95%] flex flex-wrap flex-row justify-around items-center gap-2'>
-          <div className='space-y-2'>
+          <div className='space-y-5'>
           <div className=' p-5 rounded-sm bg-[#f4f4f4]'>
-            <div><CiLocationOn/></div>
+            <div><CiLocationOn color='crimson' size='20px'/></div>
             <h2>Address</h2>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
+            <p>Saltlake A023</p>
+            <p>Kolkata, West Ben.</p>
           </div>
           <div className=' p-5 rounded-sm bg-[#f4f4f4]'>
-            <div><PiPhoneCallLight/></div>
+            <div><PiPhoneCallLight color='crimson' size='20px'/></div>
             <h2>Call us</h2>
             <p>+1 5589 55488 55</p>
             <p>+1 6678 254445 41</p>
           </div>
           </div>
-          <div className='space-y-2'>
+          <div className='space-y-5'>
           <div className='p-5 rounded-sm bg-[#f4f4f4]'>
-            <div><AiOutlineMail/></div>
+            <div><AiOutlineMail color='crimson' size='20px'/></div>
             <h2>Email Us</h2>
-            <p>info@example.com</p>
-            <p>contact@example.com</p>
+            <p>info@placement.com</p>
+            <p>contact@gmit.com</p>
           </div>
           <div className='p-5 rounded-sm bg-[#f4f4f4]'>
-            <div><FiClock/></div>
+            <div><FiClock color='crimson' size='20px'/></div>
             <h2>Open Hours</h2>
             <p>Monday - Friday</p>
             <p>9:00AM - 05:00PM</p>

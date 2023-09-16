@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import companyLogo from '../../assets/com1.png'
+import companyLogo from '../../assets/companyLogo2.png'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import Button from '../Button'
 import { useDispatch, useSelector } from 'react-redux'

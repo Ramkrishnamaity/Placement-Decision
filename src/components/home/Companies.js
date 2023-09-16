@@ -12,7 +12,7 @@ const Companies = () => {
   return (
     <div className='pt-10 w-full h-max flex flex-col justify-center bg-white'>
       <div className='w-max self-center mb-5'>
-        <h2 className='pb-2 px-5 border-b-2 border-[aqua] text-2xl'>Top Comapnies</h2>
+        <h2 className='py-3 px-5 bg-richBlack rounded-full text-white text-2xl'>Top Comapnies</h2>
       </div>
       <div className='h-max px-2 py-6 pt-5 items-center bg-[#f4f4f4]'>
         <div className='flex flex-wrap space-y-5 gap-3 items-center justify-between'>

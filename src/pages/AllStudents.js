@@ -42,7 +42,7 @@ const AllStudents = () => {
 
   useEffect(()=>{
     getStudents()
-  })
+  },[])
 
   
   return (

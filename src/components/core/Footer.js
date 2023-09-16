@@ -19,7 +19,7 @@ const Footer = () => {
       <div className='w-[95%] bg-white mx-auto py-4 my-5 rounded-sm'>
       <div className='w-max mx-auto text-sm text-center'>
         <p>© Copyright Placement Decision All Rights Reserved</p>
-        <p>Designed by RAG</p>
+        <p className='text-[12px] '>Designed by ramkrishna.</p>
 
       </div>
       </div>

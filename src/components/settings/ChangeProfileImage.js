@@ -39,7 +39,7 @@ const ChangeProfileImage = () => {
 
   async function handleFileUpload(){
     try{
-      setLoading(true)
+      setLoading(true) 
       const formdata = new FormData()
       formdata.append('profilePicture', image)
       //api call

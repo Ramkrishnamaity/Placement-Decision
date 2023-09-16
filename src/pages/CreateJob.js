@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { categories } from '../Data'
 import { endpoints } from '../services/apis'
@@ -18,12 +18,32 @@ const CreateJob = () => {
   const navigate = useNavigate()
   const token = useSelector((state)=>state.token.value)
   const loader = useSelector((state)=>state.loader.value)
+  const [image, setImage] = useState(null)
   const {register, handleSubmit,reset, formState:{errors}} = useForm()
+
+  function handleFileChange(e){
+    const file = e.target.files[0]
+    if(file){
+      setImage(file)
+    }
+  }
+
 
   async function submitHandler(formData){
     try{
       dispatch(setLoader(true))
-      const {data} = await apiConnector("POST", CREATE_JOB, formData, {Authorization: `Bearer ${token}`})
+      const formd = new FormData()
+      formd.append('companyName', formData.companyName)
+      formd.append('companyLogo', image)
+      formd.append('category', formData.category)
+      formd.append('jobType', formData.jobType)
+      formd.append('description', formData.description)
+      formd.append('tags', formData.tags)
+      formd.append('location', formData.location)
+      formd.append('package', formData.package)
+      formd.append('vacancie', formData.vacancie)
+      formd.append('lastDate', formData.lastDate)
+      const {data} = await apiConnector("POST", CREATE_JOB, formd, {Authorization: `Bearer ${token}`})
       if(data.success){
         reset()
         dispatch(setLoader(false))
@@ -68,21 +88,14 @@ const CreateJob = () => {
               )}  
               </div>
               <div className='flex flex-col md:w-[49%] w-full'>
-                <label htmlFor='companyUrl'>Company URL
+                <label htmlFor='companyLogo'>Company Logo
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
                 <input
-                  type='text'
-                  name='companyUrl'
-                  placeholder='like google.com'
-                  className='my-2 rounded-md py-2 px-5 outline-none text-richBlack w-full'
-                  {...register("companyUrl", {required:true})}
-                /> 
-                {errors.companyUrl && (
-                <span className="-mt-1 text-[12px] text-yellow-100">
-                  Please enter comany url.
-                </span>
-              )} 
+                type='file'
+                className='my-3 rounded-md'
+                onChange={handleFileChange}
+                />
               </div>
             </div>
             

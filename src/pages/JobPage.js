@@ -94,7 +94,7 @@ const JobPage = () => {
 
 useEffect(()=>{
   fetchJob()
-})
+}, [])
 
   return (
     loader? (<Spinner/>): (

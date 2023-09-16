@@ -22,7 +22,7 @@ const Job = ({job, clickDisable}) => {
 
   return (
 
-    <div className='rounded-md flex flex-col justify-center gap-5 bg-richBlack w-[280px] h-[250px] px-2 py-3 text-[#FFFFFF99] '
+    <div className='cursor-pointer rounded-md flex flex-col justify-center gap-5 bg-richBlack w-[280px] h-[250px] px-2 py-3 text-[#FFFFFF99] '
     onClick={(e)=>{clickDisable && navigate(`/job/${job._id}`)}}
     >
         <div className='flex items-center justify-start gap-2'>

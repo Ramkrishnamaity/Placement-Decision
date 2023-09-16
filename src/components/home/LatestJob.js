@@ -27,9 +27,9 @@ const LatestJob = () => {
 
   
   return (
-    <div className='py-10 px-10 w-full h-max flex flex-col justify-center bg-[#f4f4f4]'>
+    <div className='py-10 pb-17 px-10 w-full h-max flex flex-col justify-center bg-softBlack'>
       <div className='w-max self-center mb-5'>
-        <h2 className='pb-2 px-5 border-b-2 border-[aqua] text-2xl'>Latest jobs</h2>
+        <h2 className='py-3 px-5 bg-richBlack rounded-full text-white text-2xl'>Latest jobs</h2>
       </div>
       <div className='flex flex-wrap justify-center gap-5 items-center'>
       {jobs !== null && (
