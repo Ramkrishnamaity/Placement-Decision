@@ -1,12 +1,17 @@
 import React from 'react'
+import notfound from '../assets/notfound.jpg'
 
 const NotFound = () => {
 
   
 
   return (
-    <div className='py-[50px] pt-[75px] min-h-screen '>
-        404 Not Found
+    <div className='min-h-screen'>
+      <img
+        src={notfound}
+        alt='notfound'
+        className='w-full'
+      />
     </div>
   )
 }
