@@ -207,7 +207,7 @@ const CreateJob = () => {
               )}  
               </div>
               <div className='flex flex-col  md:w-[49%] w-full'>
-                <label htmlFor='lastDate'>Location
+                <label htmlFor='lastDate'>Last Date
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
                 <input
