@@ -75,12 +75,13 @@ const ApplyJob = () => {
 
   return (
     loader? (<Spinner/>): (
-      <div className='py-[50px] pt-[75px] min-h-screen '>
-        <div className='w-[95%] sm:w-[90%] md:w-[80%] bg-softBlack flex flex-col items-center gap-8 pt-4 mx-auto pb-8'>
-          <h1 className='text-richBlue text-2xl self-start ml-5'>Apply Job</h1>
-          <form onSubmit={handleSubmit(submitHandler)}>
+      <div className='py-[25px] pt-[75px] min-h-screen text-[#FFFFFF99]'>
+        <div className='bg-softBlack flex flex-col items-center gap-8 pt-4 mx-auto pb-8'>
+          <h1 className="text-white md:mb-5 mb-2 sm:text-3xl text-xl font-medium px-5 py-4 bg-richBlue rounded-e-xl self-start">
+          Apply Job</h1>
+          <form onSubmit={handleSubmit(submitHandler)} className='w-full sm:px-10 px-2'>
             <div className='flex items-center gap-3 md:flex-row flex-col'>
-              <div className='flex flex-col'>
+              <div className='flex flex-col md:w-[45%] w-full mx-auto'>
                 <label htmlFor='name'>Name
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -97,7 +98,7 @@ const ApplyJob = () => {
                 </span>
               )}  
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col md:w-[45%] w-full mx-auto'>
                 <label htmlFor='email'>Email
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -117,7 +118,7 @@ const ApplyJob = () => {
             </div>
 
             <div className='flex items-center gap-3 md:flex-row flex-col'>
-              <div className='flex flex-col'>
+              <div className='flex flex-col md:w-[45%] w-full mx-auto'>
                 <label htmlFor='rollNo'>Roll No
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -134,7 +135,7 @@ const ApplyJob = () => {
                 </span>
               )}  
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col md:w-[45%] w-full mx-auto'>
                 <label htmlFor='regNo'>Reg No
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -154,7 +155,7 @@ const ApplyJob = () => {
             </div>
 
             <div className='flex items-center gap-3 md:flex-row flex-col'>
-              <div className='flex flex-col'>
+              <div className='flex flex-col md:w-[45%] w-full mx-auto'>
                 <label htmlFor='semester'>Semester
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -172,7 +173,7 @@ const ApplyJob = () => {
                 </span>
               )}  
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col md:w-[45%] w-full mx-auto'>
                 <label htmlFor='year'>Year
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -191,7 +192,7 @@ const ApplyJob = () => {
               </div>
             </div>
             <div className='flex items-center gap-3 md:flex-row flex-col'>
-              <div className='flex flex-col'>
+              <div className='flex flex-col  md:w-[45%] w-full mx-auto'>
                 <label htmlFor='dept'>Department
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -208,7 +209,7 @@ const ApplyJob = () => {
                 </span>
               )}  
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col md:w-[45%] w-full mx-auto'>
                 <label htmlFor='cgpa'>CGPA
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -226,7 +227,7 @@ const ApplyJob = () => {
               </div>
             </div>
             <div className='flex items-center gap-3 md:flex-row flex-col'>
-              <div className='flex flex-col'>
+              <div className='flex flex-col  md:w-[45%] w-full mx-auto'>
                 <label htmlFor='secondary'>Secondary result in %
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -243,7 +244,7 @@ const ApplyJob = () => {
                 </span>
               )}  
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col md:w-[45%] w-full mx-auto'>
                 <label htmlFor='higher'>Higher S result in %
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
@@ -261,7 +262,7 @@ const ApplyJob = () => {
               </div>
             </div>
 
-            <div className='flex flex-col gap-3'>
+            <div className='flex flex-col gap-2 md:items-center items-start mt-2'>
             <label htmlFor='resume'>Resume in image file
                 <sup className='text-[#EF476F] text-md'>*</sup>
             </label>
@@ -269,13 +270,14 @@ const ApplyJob = () => {
               type='file'
               name='resume'
               accept="image/*"
+              className='md:ml-20 ml-0'
               onChange={(e)=>{setImage(e.target.files[0])}}
               required
             /> 
             </div>
 
-            <div className='flex justify-center items-center'>
-              <button className='text-[red] text-xl' type='submit'>
+            <div className='flex justify-center items-center mt-5'>
+              <button className='text-white px-3 py-1 rounded-lg tracking-wide text-xl bg-[crimson]' type='submit'>
                 Apply
               </button>
             </div>

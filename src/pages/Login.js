@@ -96,7 +96,7 @@ const Login = () => {
                         </label>
                         <input
                         name='password'
-                        type={showPassword? 'password': 'text'} 
+                        type={!showPassword? 'password': 'text'} 
                         placeholder='Enter password'
                         value= {formData.password}
                         onChange={(e)=>{handleOnChange(e)}}
@@ -107,9 +107,9 @@ const Login = () => {
                             not remember password?
                             <Link to='/forgot-password' className='text-[#EF476F]'>forgot password</Link> 
                         </div>
-                        <div className='absolute p-1 right-2 top-10 cursor-pointer' onClick={()=>{setShowPassword((prev)=>(!prev))}}>
+                        <div className='absolute p-1 right-2 top-10 cursor-pointer text-richBlack' onClick={()=>{setShowPassword((prev)=>(!prev))}}>
                             { 
-                                showPassword? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
+                                !showPassword? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
                             }
                         </div>
                     </div>

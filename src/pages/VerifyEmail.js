@@ -57,23 +57,26 @@ const VerifyEmail = () => {
 
 return (
     loader? (<Spinner/>): (      
-      <div className='flex justify-center items-center py-[50px] pt-[75px] min-h-screen '>
+      <div className='flex justify-center items-center py-[50px] pt-[75px] min-h-screen text-[#FFFFFF99] '>
+
+        <div className='bg-midBlack rounded-md py-5 sm:px-5 px-2 space-y-2'>
           <form
           onSubmit={(e)=>{submitHandler(e)}}
           >
-            <h2>Verify Email</h2>
-            <p>A verification code has been sent to you. Enter the code below</p>
+            <h2 className='sm:text-2xl text-xl font-bold tracking-wider text-white'>Verify Email</h2>
+            <p className='my-1'>A verification code has been sent to you. Enter the code below</p>
             <div className='flex items-center gap-3'>
-              <input type='text' placeholder='Enter otp' className='outline-none'
+              <input type='password' placeholder='Enter otp' className='outline-none w-max px-3 py-2 rounded-lg text-richBlack'
                 onChange={(e)=>{setOtp(e.target.value)}}
                 value={otp}
                 name='otp'
               />
             </div>
-            <div>
+            <div className='my-3'>
             <Button text='Submit' type='submit'/>
             </div>
           </form>
+        </div>
       </div>
     )
   )

@@ -53,14 +53,14 @@ const AllStudents = () => {
           className="mb-14 sm:text-3xl text-xl font-medium px-5 py-4 bg-richBlue rounded-e-xl self-start"
           >Students</h1>
         <div className='w-[95%] sm:w-[98%] md:w-[80%] mx-auto flex flex-col gap-5 '>
-          <div className='flex flex-col gap-5 justify-between rounded-md  bg-richBlack p-8 px-12'>
-            <h2 className='text-2xl tracking-wide'>CTC Registered Emails</h2>
+          <div className='flex flex-col gap-5 justify-between rounded-md  bg-richBlack sm:p-8 px-2 overflow-hidden py-5 sm:px-12'>
+            <h2 className='sm:text-2xl text-xl tracking-wide'>CTC Registered Emails</h2>
             <div className='flex flex-wrap gap-3 items-center text-[#FFFFFF99]'>
               {
                 ctc !==null && (
                   ctc.map((mail)=>(
                     <div key={mail._id}
-                    className=' bg-richBlue rounded-full w-max p-2'
+                    className=' bg-richBlue rounded-full w-max sm:p-2 px-[4px] py-[2px]'
                     >{mail.email}</div>
                   ))
                 )
@@ -68,17 +68,17 @@ const AllStudents = () => {
             </div>
           </div>
         
-          <div className='flex flex-col justify-between gap-5 rounded-md bg-richBlack md:p-8 p-5 md:px-12 px-5'>
-            <h2 className='text-2xl tracking-wide'>Registered Students</h2>
+          <div className='flex flex-col justify-between gap-5 rounded-md bg-richBlack md:p-8 p-5 md:px-12 sm:px-5 px-1'>
+            <h2 className='sm:text-2xl text-xl tracking-wide ml-2'>Registered Students</h2>
         
             <div className='bg-richBlue '>
             <table className='w-full border border-collapse'>
               <thead className='text-lg'>
                 <tr className='border'>
                   <td className='border p-2 hidden md:flex'>Image</td>
-                  <td className='border p-2'>Name & Email</td>
+                  <td className='border p-2 px-1 sm:text-lg text-md'>Name & Email</td>
                   <td className='border p-2 hidden sm:flex'>Contact</td>
-                  <td className='border p-2'>City</td>
+                  <td className='border p-2 px-1 sm:text-lg text-md'>City</td>
                 </tr>
               </thead>
               <tbody className='bg-white text-black'>

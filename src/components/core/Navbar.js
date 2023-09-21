@@ -81,7 +81,7 @@ const Navbar = () => {
                   (
                     <div className='bg-richBlue text-white rounded-md gap-2 sm:px-2 py-2 px-1 mt-2 md:ml-5 sm:ml-1 ml-0 flex items-center'>
                       <div className=''>
-                        <img src={user.image} alt={`${user.firstName} profile`} className='sm:w-[50px] sm:h-[50px] w-[35px] h-[35px] rounded-full object-cover'/>
+                        <img src={user.image} alt={`${user.firstName} profile`}  className='sm:w-[50px] sm:h-[50px] w-[35px] h-[35px] rounded-full object-cover'/>
                       </div>
                       <div>
                       <p
@@ -108,7 +108,7 @@ const Navbar = () => {
                     <li>
                       <NavLink to='/ctc-registration' className='flex items-center gap-1'>
                       <div className='mb-[2px] w-5'><AiOutlineHome/></div>
-                      <p>CTC Registration</p>
+                      <p>CDC Registration</p>
                       </NavLink>
                     </li>
                   )

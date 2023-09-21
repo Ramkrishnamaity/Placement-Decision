@@ -76,7 +76,10 @@ const JobPage = () => {
 
   function getData(){
 
+    if(job?.applications.length === 0) return ''
+
     let data = job?.applications
+
 
     Object.values(data).forEach((app)=>{
       delete app._id
@@ -99,7 +102,7 @@ useEffect(()=>{
   return (
     loader? (<Spinner/>): (
       <div className='py-[50px] pt-[75px] min-h-screen text-white space-y-10'>
-        <div className='w-[95%] sm:w-[90%] md:w-[80%] bg-richBlack p-10  rounded-md flex flex-col items-center gap-8 mx-auto'>
+        <div className='w-[95%] sm:w-[90%] md:w-[80%] bg-richBlack sm:p-10 p-5  rounded-md flex flex-col items-center gap-8 mx-auto'>
           {
             job !== null && (
               
@@ -109,7 +112,7 @@ useEffect(()=>{
                     <img
                     src={job?.logo}
                     alt='job logo'
-                    className='w-[100px] h-[100px] rounded-xl object-cover'
+                    className='w-[100px] h-[100px] rounded-xl object-cover bg-softBlue'
                     />
                   </div>
                   <div className='text-center mt-1'>
@@ -125,7 +128,7 @@ useEffect(()=>{
 
                 <div className='sm:w-[90%] w-full  flex md:justify-between items-center flex-wrap space-x-5 space-y-3'>
                   <div className=' flex items-center gap-2 mt-3'>
-                    <p className='sm:ml-5 ml-[5%] px-2 py-1 bg-richBlue text-lg text-black rounded-xl'>Skills: </p>
+                    <p className='px-2 py-1 bg-richBlue text-lg text-black rounded-xl'>Skills: </p>
                       {
                         job?.tags.map((tag, index)=>(
                           <p key={index}
@@ -204,7 +207,7 @@ useEffect(()=>{
               <div className='flex flex-wrap gap-5 justify-center items-center'>
                 {
                   relatedJob.map((j)=>(
-                    !isSame(j._id) && <Job job={j} key={j._id}/> 
+                    !isSame(j._id) && <Job job={j} key={j._id} clickDisable={true}/> 
                   ))
                 }
               </div>

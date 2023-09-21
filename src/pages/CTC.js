@@ -69,7 +69,7 @@ const CTC = () => {
                 className='w-full'
             >
                 <fieldset className='border-2 border-[#FFFFFF99] rounded-lg px-5 py-5 pt-2 flex flex-col justify-center gap-5'>
-                    <legend className='ml-2 px-2 py-4 text-white text-2xl tracking-wide'>CTC Registration</legend>
+                    <legend className='ml-2 px-2 py-4 text-white text-2xl tracking-wide'>CDC Registration</legend>
 
                     <div className='flex gap-1 md:flex-row flex-col'>
                         <div  className='flex flex-col'>

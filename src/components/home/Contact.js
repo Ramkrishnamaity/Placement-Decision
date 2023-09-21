@@ -68,7 +68,7 @@ const Contact = () => {
 
 
   return (
-    <div className='py-10 px-10 w-full h-max flex flex-col justify-center bg-white'>
+    <div className='py-10 sm:px-10 px-5 w-full h-max flex flex-col justify-center bg-white'>
       <div className='w-max self-center mb-4'>
         <h2 className='py-3 px-5 bg-richBlack rounded-full text-white text-2xl'>Contact Us</h2>
       </div>

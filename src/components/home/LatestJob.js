@@ -27,7 +27,7 @@ const LatestJob = () => {
 
   
   return (
-    <div className='py-10 pb-17 px-10 w-full h-max flex flex-col justify-center bg-softBlack'>
+    <div className='py-10 pb-17 sm:px-10 px-5 w-full h-max flex flex-col justify-center bg-softBlack'>
       <div className='w-max self-center mb-5'>
         <h2 className='py-3 px-5 bg-richBlack rounded-full text-white text-2xl'>Latest jobs</h2>
       </div>

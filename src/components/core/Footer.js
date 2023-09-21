@@ -4,7 +4,7 @@ import {AiFillTwitterCircle, AiOutlineInstagram, AiFillLinkedin} from 'react-ico
 
 const Footer = () => {
   return (
-    <div className='pt-10 px-10 w-full h-max flex flex-col justify-center bg-[#f4f4f4]'>
+    <div className='pt-10 sm:px-10 px-1 w-full h-max flex flex-col justify-center bg-[#f4f4f4]'>
       <div className='flex items-center justify-between'>
           <div>
             Placement decision Useful Links : 
@@ -18,7 +18,7 @@ const Footer = () => {
       </div>
       <div className='w-[95%] bg-white mx-auto py-4 my-5 rounded-sm'>
       <div className='w-max mx-auto text-sm text-center'>
-        <p>© Copyright Placement Decision All Rights Reserved</p>
+        <p>© Copyright Placement Decision</p><p> All Rights Reserved</p>
         <p className='text-[12px] '>Designed by ramkrishna.</p>
 
       </div>

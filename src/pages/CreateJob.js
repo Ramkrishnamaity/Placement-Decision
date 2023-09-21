@@ -92,6 +92,7 @@ const CreateJob = () => {
                 <sup className='text-[#EF476F] text-md'>*</sup>
                 </label>
                 <input
+                required
                 type='file'
                 className='my-3 rounded-md'
                 onChange={handleFileChange}

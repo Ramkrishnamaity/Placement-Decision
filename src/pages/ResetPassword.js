@@ -75,9 +75,9 @@ const ResetPassword = () => {
     
   return (
     loader? (<Spinner/>): (  
-        <div className='py-[50px] pt-[75px] flex justify-center items-center min-h-screen'>
-            <div>
-                <h1>Choose new password</h1>
+        <div className='py-[50px] pt-[75px] flex justify-center items-center min-h-screen text-[#FFFFFF99]'>
+            <div className=' bg-midBlack py-5 sm:px-5 px-2 rounded-md space-y-2'>
+                <h1 className='sm:text-2xl text-xl font-bold tracking-wider text-white'>Choose new password</h1>
                 <p>
                     Almost done. Enter your new password and you're all set.
                 </p>
@@ -91,16 +91,16 @@ const ResetPassword = () => {
                         </label>
                         <input
                         name='password'
-                        type={showPassword1? 'password': 'text'} 
+                        type={!showPassword1? 'password': 'text'} 
                         placeholder='Enter new password'
                         value= {formData.password}
                         onChange={(e)=>{handleOnChange(e)}}
                         required
                         className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                         />
-                        <div className='absolute p-1 right-2 top-10 cursor-pointer' onClick={()=>{setShowPassword1((prev)=>(!prev))}}>
+                        <div className='absolute p-1 right-2 top-10 cursor-pointer text-richBlack' onClick={()=>{setShowPassword1((prev)=>(!prev))}}>
                             { 
-                                showPassword1? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
+                                !showPassword1? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
                             }
                         </div>
                     </div>
@@ -111,26 +111,26 @@ const ResetPassword = () => {
                         </label>
                         <input
                         name='confirmPassword'
-                        type={showPassword2? 'password': 'text'} 
+                        type={!showPassword2? 'password': 'text'} 
                         placeholder='Enter password'
                         value= {formData.confirmPassword}
                         onChange={(e)=>{handleOnChange(e)}}
                         required
                         className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                         />
-                        <div className='absolute p-1 right-2 top-10 cursor-pointer' onClick={()=>{setShowPassword2((prev)=>(!prev))}}>
+                        <div className='absolute p-1 right-2 top-10 cursor-pointer text-richBlack' onClick={()=>{setShowPassword2((prev)=>(!prev))}}>
                             { 
-                                showPassword2? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
+                                !showPassword2? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
                             }
                         </div>
                     </div>
 
-                    <div className='w-full'>
+                    <div className='w-full mt-2'>
                         <Button text='Reset Password' type='submit'></Button>
                     </div> 
                 </form>
                 <div>
-                    <Link className='flex' to='/login'>
+                    <Link className='flex items-center' to='/login'>
                         <span><BiLeftArrowAlt/></span>
                         Back to login
                     </Link>

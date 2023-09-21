@@ -5,7 +5,7 @@ const Modal = ({desc, btnText, setOpenModal, deleteAccount, logout, deleteJob })
 
   return (
     <div className='text-[#FFFFFF99] z-[999] fixed overflow-auto top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-white bg-opacity-10 backdrop-blur-sm'>
-        <div className='flex flex-col items-center gap-1 p-8 rounded-lg bg-richBlack '>
+        <div className='border border-white flex flex-col items-center gap-1 p-8 rounded-lg bg-richBlack '>
             <h1>Are you sure?</h1>
             <p>{desc}</p>
             <div className='my-2'

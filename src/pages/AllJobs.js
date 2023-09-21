@@ -117,7 +117,7 @@ const AllJobs = () => {
 
           <div className='mt-5 flex justify-between items-center flex-wrap gap-5'>
             {
-              !jobs? (<div>Job not found</div>):
+              !jobs? (<div className='text-white text-2xl font-bold'>Job not found</div>):
               (
                 jobs.filter((job)=>job.jobType.includes(jobType)).map((job)=>(
                   <Job key={job._id} job={job} clickDisable={true}></Job>

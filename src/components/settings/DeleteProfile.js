@@ -42,7 +42,7 @@ const DeleteProfile = () => {
 
   return (
     <div>
-        <div className="my-5 flex flex-row gap-x-5 rounded-md bg-richBlack  p-8 px-12">
+        <div className="my-5 flex sm:flex-row flex-col items-center gap-x-5 rounded-md bg-richBlack  p-8 px-12">
         <div className="flex aspect-square h-14 w-14 items-center justify-center rounded-full bg-pink-700">
             <FiTrash2 className="text-3xl text-[white]" />
         </div>
@@ -50,7 +50,7 @@ const DeleteProfile = () => {
             <h2 className="text-lg font-semibold text-[white]">
             Delete Account
             </h2>
-            <div className="w-3/5 ">
+            <div className="sm:w-3/5 w-full">
             <p>Would you like to delete account?</p>
             <p>
                 Deleting your account is

@@ -51,7 +51,12 @@ const UpdatePassword = () => {
       <form
       onSubmit={(e)=>{submitHandler(e)}} 
       >
+        <div className='sm:text-2xl text-xl font-bold tracking-wider text-white pb-3'>
+            Update Password : 
+        </div>
+      
         <fieldset className=' rounded-md bg-richBlack  p-5  flex md:flex-row flex-col justify-around gap-2'>
+        
           <div className='relative flex flex-col'>
             <label>
                 Current Password

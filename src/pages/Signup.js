@@ -129,16 +129,16 @@ const Signup = () => {
                     </label>
                     <input
                     name='password'
-                    type={showPassword1? 'password': 'text'} 
+                    type={!showPassword1? 'password': 'text'} 
                     placeholder='Enter password'
                     value= {formData.password}
                     onChange={(e)=>{handleOnChange(e)}}
                     required
                     className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                     />
-                    <div className='absolute p-1 right-2 top-10 cursor-pointer' onClick={()=>{setShowPassword1((prev)=>(!prev))}}>
+                    <div className='absolute p-1 right-2 top-10 cursor-pointer text-richBlack' onClick={()=>{setShowPassword1((prev)=>(!prev))}}>
                         { 
-                            showPassword1? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
+                            !showPassword1? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
                         }
                     </div>
                 </div>
@@ -149,16 +149,16 @@ const Signup = () => {
                     </label>
                     <input
                     name='confirmPassword'
-                    type={showPassword2? 'password': 'text'} 
+                    type={!showPassword2? 'password': 'text'} 
                     placeholder='Confirm password'
                     value= {formData.confirmPassword}
                     onChange={(e)=>{handleOnChange(e)}}
                     required
                     className='my-2 rounded-md py-2 px-5 outline-none text-richBlack'
                     />
-                    <div className='absolute p-1 right-2 top-10 cursor-pointer' onClick={()=>{setShowPassword2((prev)=>(!prev))}}>
+                    <div className='absolute p-1 right-2 top-10 cursor-pointer text-richBlack' onClick={()=>{setShowPassword2((prev)=>(!prev))}}>
                         { 
-                            showPassword2? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
+                            !showPassword2? (<BsFillEyeFill/>): (<BsFillEyeSlashFill/>)
                         }
                     </div>
                 </div>

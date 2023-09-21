@@ -40,9 +40,16 @@ const PersonalInfo = () => {
 
   
   return (
-    <div className=' w-full rounded-md bg-richBlack p-10 flex items-center justify-around'>
+    <div className='w-full rounded-md '>
+      
+      <div className='sm:text-2xl text-xl font-bold tracking-wider text-white pb-3'>
+        Update Profile : 
+      </div>
+
+      <div className='bg-richBlack p-10 flex items-center justify-around'>
       
       <form onSubmit={handleSubmit(updateProfile)} >
+
         <div className='flex flex-col gap-3 w-full'>
         <div className='flex flex-col sm:flex-row gap-3 mx-auto'>
           <div className=' flex flex-col'>
@@ -216,6 +223,8 @@ const PersonalInfo = () => {
           >{loading? 'Updating...': 'Update'}</button>
         </div>
       </form>
+
+      </div>
 
     </div>
   )
